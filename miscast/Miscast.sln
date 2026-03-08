@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miscast", "Miscast.csproj", "{AB6F167F-113A-4D0B-A037-7B0D1F5D2E5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB6F167F-113A-4D0B-A037-7B0D1F5D2E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6F167F-113A-4D0B-A037-7B0D1F5D2E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6F167F-113A-4D0B-A037-7B0D1F5D2E5A}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{AB6F167F-113A-4D0B-A037-7B0D1F5D2E5A}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{AB6F167F-113A-4D0B-A037-7B0D1F5D2E5A}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{AB6F167F-113A-4D0B-A037-7B0D1F5D2E5A}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
