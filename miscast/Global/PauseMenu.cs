@@ -10,7 +10,7 @@ public partial class PauseMenu : Panel, IDebuggable
     [Export] private Control settingsScreen;
 
     // --- Variables ---
-    public bool paused = false;
+    private bool paused = false;
 
     #endregion
 

@@ -12,7 +12,7 @@ public partial class MagicNode : Node2D, IDebuggable
     [Export] public Vector2I gridPosition;
 
     // --- Variables ---
-    public bool active;
+    private bool active;
 
     #endregion
 

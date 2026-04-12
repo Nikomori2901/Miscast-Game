@@ -8,19 +8,5 @@ public partial class DialogueBox : Control, IDebuggable
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
 
-    // --- Variables ---
-
-    #endregion
-
-    #region Events
-
-    #endregion
-
-    #region Inherited Methods
-
-    #endregion
-
-    #region Methods
-
     #endregion
 }

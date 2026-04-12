@@ -8,19 +8,9 @@ public partial class SceneManager : Singleton<SceneManager>, IDebuggable
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
 
-    // --- Variables ---
-
     #endregion
 
-    #region Events
-
-    #endregion
-
-    #region Inherited Methods
-
-    #endregion
-
-    #region Methods
+#region Methods
 
     public void LoadScene(string scenePath)
     {

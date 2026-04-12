@@ -16,11 +16,7 @@ public partial class GameDataManager : Singleton<GameDataManager>, IDebuggable
 
     #endregion
 
-    #region Events
-
-    #endregion
-
-    #region Inherited Methods
+#region Inherited Methods
     // ----- Lifecycle Methods -----
     public override void _Ready()
     {

@@ -8,15 +8,9 @@ public partial class GameManager : Singleton<GameManager>, IDebuggable
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
 
-    // --- Variables ---
-
     #endregion
 
-    #region Events
-
-    #endregion
-
-    #region Inherited Methods
+#region Inherited Methods
     // ----- Lifecycle Methods -----
     public override void _Ready()
     {
