@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhts80ab3m4se"
-path="res://.godot/imported/Active Magic Connection Diagonal.png-54be5cad629e1efcb4673579bfb87aa5.ctex"
+uid="uid://djto0e2vb8hxq"
+path="res://.godot/imported/Active Magic Connection Center Diagonal.png-137b42bb8cf8344a9ad8461370f77b55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Magic Casting/Active Magic Connection Diagonal.png"
-dest_files=["res://.godot/imported/Active Magic Connection Diagonal.png-54be5cad629e1efcb4673579bfb87aa5.ctex"]
+source_file="res://Magic Casting/Sprites/Active Magic Connection Center Diagonal.png"
+dest_files=["res://.godot/imported/Active Magic Connection Center Diagonal.png-137b42bb8cf8344a9ad8461370f77b55.ctex"]
 
 [params]
 

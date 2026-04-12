@@ -6,6 +6,39 @@ using System.Linq;
 using Miscast;
 using GodotDict = Godot.Collections.Dictionary;
 
+public enum GridPosition
+{
+    TopLeft,
+    Top,
+    TopRight,
+    Left,
+    Center,
+    Right,
+    BottomLeft,
+    Bottom,
+    BottomRight
+}
+
+public static class GridPositionHelper
+{
+    public static Vector2I ToVector(GridPosition position)
+    {
+        return position switch
+        {
+            GridPosition.TopLeft => new Vector2I(0, 0),
+            GridPosition.Top => new Vector2I(1, 0),
+            GridPosition.TopRight => new Vector2I(2, 0),
+            GridPosition.Left => new Vector2I(0, 1),
+            GridPosition.Center => new Vector2I(1, 1),
+            GridPosition.Right => new Vector2I(2, 1),
+            GridPosition.BottomLeft => new Vector2I(0, 2),
+            GridPosition.Bottom => new Vector2I(1, 2),
+            GridPosition.BottomRight => new Vector2I(2, 2),
+            _ => new Vector2I(1, 1)
+        };
+    }
+}
+
 public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 {
     #region Variables
@@ -24,19 +57,25 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
     public bool casting = false;
     public MagicNode hoveredNode;
 
-    public List<NodeConnection> targetPattern = new List<NodeConnection>();
+    [Export] public SpellPattern targetPattern;
+    private List<NodeConnection> targetConnections = new List<NodeConnection>();
 
     #endregion
 
 #region Inherited Methods
     // ----- Lifecycle Methods -----
+    public override void _EnterTree()
+    {
+        DebugManager.DebugPrint(this, "MagicCasting EnterTree");
+
+        // --- Global Subscribe Events ---
+        MagicNode.NodeActivatedEvent += NodeActivated;
+    }
+
     public override void _Ready()
     {
         DebugManager.DebugPrint(this, "MagicCasting Ready");
         base._Ready();
-
-        // --- Global Subscribe Events ---
-        MagicNode.NodeActivatedEvent += NodeActivated;
 
         // --- Initialisation ---
         List<MagicNode> magicNodes = new List<MagicNode>();
@@ -62,6 +101,9 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 
         DebugManager.DebugPrint(this, $"Node Grid Length: {nodeGrid.Length}");
         DebugManager.DebugPrint(this, $"Connection Map Size: {connectionMap.Count}");
+
+        // --- Resolve Target Pattern ---
+        ResolveTargetPattern();
     }
 
     public override void _ExitTree()
@@ -200,11 +242,21 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 
     public void StopCasting()
     {
+        if (!casting)
+        {
+            return;
+        }
+
         DebugManager.DebugPrint(this, "StopCasting");
 
         if (CastValid())
         {
             CastSuccess();
+        }
+
+        else
+        {
+            CastFail();
         }
 
         foreach (MagicNode magicNode in activeNodes)
@@ -223,9 +275,42 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
         casting = false;
     }
 
+    public void ResolveTargetPattern()
+    {
+        targetConnections.Clear();
+
+        if (targetPattern == null)
+        {
+            return;
+        }
+
+        foreach (GridConnection pair in targetPattern.connections)
+        {
+            Vector2I fromPosition = GridPositionHelper.ToVector(pair.from);
+            Vector2I toPosition = GridPositionHelper.ToVector(pair.to);
+
+            if (connectionMap.TryGetValue((fromPosition, toPosition), out NodeConnection connection) && !targetConnections.Contains(connection))
+            {
+                targetConnections.Add(connection);
+            }
+        }
+
+        DebugManager.DebugPrint(this, $"Target Pattern: {targetPattern.patternName} - {targetConnections.Count} Connections");
+    }
+
     public bool CastValid()
     {
-        foreach (NodeConnection targetConnection in targetPattern)
+        if (targetConnections.Count == 0)
+        {
+            return false;
+        }
+
+        if (activeConnections.Count != targetConnections.Count)
+        {
+            return false;
+        }
+
+        foreach (NodeConnection targetConnection in targetConnections)
         {
             if (!activeConnections.Contains(targetConnection))
             {
@@ -238,7 +323,12 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 
     public void CastSuccess()
     {
+        DebugManager.DebugPrint(this, "CastSuccess");
+    }
 
+    public void CastFail()
+    {
+        DebugManager.DebugPrint(this, "CastFail");
     }
 
     #endregion

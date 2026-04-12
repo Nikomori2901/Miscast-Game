@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://ctcissdj60us8"]
 
-[ext_resource type="Texture2D" uid="uid://dgioac7tk8aeq" path="res://Magic Casting/Magic Node Hover.png" id="1_5r8fu"]
+[ext_resource type="Texture2D" uid="uid://dgioac7tk8aeq" path="res://Magic Casting/Sprites/Magic Node Hover.png" id="1_5r8fu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sx8mr"]
 atlas = ExtResource("1_5r8fu")

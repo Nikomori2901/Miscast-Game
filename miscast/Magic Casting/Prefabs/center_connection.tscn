@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfm88qtcjnh2r"]
 
-[ext_resource type="SpriteFrames" uid="uid://b24foo64wsn20" path="res://Magic Casting/center_connection_frames.tres" id="1_i6koo"]
+[ext_resource type="SpriteFrames" uid="uid://b24foo64wsn20" path="res://Magic Casting/Sprites/center_connection_frames.tres" id="1_i6koo"]
 [ext_resource type="Script" uid="uid://erqckueud01q" path="res://Magic Casting/NodeConnection.cs" id="2_y2f8v"]
 
 [node name="Center Connection" type="AnimatedSprite2D" unique_id=807643370]

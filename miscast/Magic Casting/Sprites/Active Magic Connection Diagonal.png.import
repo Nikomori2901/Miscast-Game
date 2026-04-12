@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgioac7tk8aeq"
-path="res://.godot/imported/Magic Node Hover.png-af038f3653d45cc8b346928b3f708ce4.ctex"
+uid="uid://dhts80ab3m4se"
+path="res://.godot/imported/Active Magic Connection Diagonal.png-9afac38d482a2b45b2f9fbff700dccae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Magic Casting/Magic Node Hover.png"
-dest_files=["res://.godot/imported/Magic Node Hover.png-af038f3653d45cc8b346928b3f708ce4.ctex"]
+source_file="res://Magic Casting/Sprites/Active Magic Connection Diagonal.png"
+dest_files=["res://.godot/imported/Active Magic Connection Diagonal.png-9afac38d482a2b45b2f9fbff700dccae.ctex"]
 
 [params]
 

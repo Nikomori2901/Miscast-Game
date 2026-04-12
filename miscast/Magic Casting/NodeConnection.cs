@@ -8,6 +8,8 @@ public partial class NodeConnection : AnimatedSprite2D, IDebuggable
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
 
+    [Export] public GridPosition fromNode;
+    [Export] public GridPosition toNode;
     [Export] public Vector2I nodePosition1;
     [Export] public Vector2I nodePosition2;
 

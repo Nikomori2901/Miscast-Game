@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cypo6epflla41"]
 
-[ext_resource type="Texture2D" uid="uid://dhts80ab3m4se" path="res://Magic Casting/Active Magic Connection Diagonal.png" id="1_633nm"]
+[ext_resource type="Texture2D" uid="uid://dhts80ab3m4se" path="res://Magic Casting/Sprites/Active Magic Connection Diagonal.png" id="1_633nm"]
 [ext_resource type="Script" uid="uid://erqckueud01q" path="res://Magic Casting/NodeConnection.cs" id="2_jg14x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k2uua"]

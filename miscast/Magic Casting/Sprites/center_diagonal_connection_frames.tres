@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://xiebpl3lf1jk"]
 
-[ext_resource type="Texture2D" uid="uid://djto0e2vb8hxq" path="res://Magic Casting/Active Magic Connection Center Diagonal.png" id="1_tkwqv"]
+[ext_resource type="Texture2D" uid="uid://djto0e2vb8hxq" path="res://Magic Casting/Sprites/Active Magic Connection Center Diagonal.png" id="1_tkwqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqhu1"]
 atlas = ExtResource("1_tkwqv")

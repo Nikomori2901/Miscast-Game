@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce5ofh272jrwu"
-path="res://.godot/imported/Magic Circle.png-6c2ca32dca8892df89b4cde664214804.ctex"
+uid="uid://dsr882sy40hpu"
+path="res://.godot/imported/Active Magic Connection.png-1c4fa8d5d103b3e78600f4b6a53b984d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Magic Casting/Magic Circle.png"
-dest_files=["res://.godot/imported/Magic Circle.png-6c2ca32dca8892df89b4cde664214804.ctex"]
+source_file="res://Magic Casting/Sprites/Active Magic Connection.png"
+dest_files=["res://.godot/imported/Active Magic Connection.png-1c4fa8d5d103b3e78600f4b6a53b984d.ctex"]
 
 [params]
 

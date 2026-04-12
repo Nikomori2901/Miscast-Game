@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://djryp05xx8ngq"]
 
-[ext_resource type="Texture2D" uid="uid://ce5ofh272jrwu" path="res://Magic Casting/Magic Circle.png" id="1_84aqd"]
+[ext_resource type="Texture2D" uid="uid://ce5ofh272jrwu" path="res://Magic Casting/Sprites/Magic Circle.png" id="1_84aqd"]
 [ext_resource type="Script" uid="uid://caxtnxce0s5sr" path="res://Magic Casting/MagicCasting.cs" id="1_xtw7t"]
-[ext_resource type="PackedScene" uid="uid://cd7v7qkoaseda" path="res://Magic Casting/magic_node.tscn" id="2_84aqd"]
-[ext_resource type="PackedScene" uid="uid://cypo6epflla41" path="res://Magic Casting/diagonal_connection.tscn" id="3_dihw6"]
-[ext_resource type="PackedScene" uid="uid://bfm88qtcjnh2r" path="res://Magic Casting/center_connection.tscn" id="3_l1tdc"]
-[ext_resource type="PackedScene" uid="uid://daccyavt7hclw" path="res://Magic Casting/center_diagonal_connection.tscn" id="3_n7iw2"]
-[ext_resource type="PackedScene" uid="uid://wphmn2kcwisc" path="res://Magic Casting/connection.tscn" id="4_l1tdc"]
+[ext_resource type="PackedScene" uid="uid://cd7v7qkoaseda" path="res://Magic Casting/Prefabs/magic_node.tscn" id="2_84aqd"]
+[ext_resource type="Resource" uid="uid://bjv4mx4bnycj3" path="res://Magic Casting/Spell Patterns/Test Pattern.tres" id="2_rwesp"]
+[ext_resource type="PackedScene" uid="uid://cypo6epflla41" path="res://Magic Casting/Prefabs/diagonal_connection.tscn" id="3_dihw6"]
+[ext_resource type="PackedScene" uid="uid://bfm88qtcjnh2r" path="res://Magic Casting/Prefabs/center_connection.tscn" id="3_l1tdc"]
+[ext_resource type="PackedScene" uid="uid://daccyavt7hclw" path="res://Magic Casting/Prefabs/center_diagonal_connection.tscn" id="3_n7iw2"]
+[ext_resource type="PackedScene" uid="uid://wphmn2kcwisc" path="res://Magic Casting/Prefabs/connection.tscn" id="4_l1tdc"]
 
 [node name="Magic Casting" type="Node2D" unique_id=1307274607]
 script = ExtResource("1_xtw7t")
 debugEnabled = true
+targetPattern = ExtResource("2_rwesp")
 
 [node name="Magic Circle" type="Sprite2D" parent="." unique_id=1811636589]
 position = Vector2(320, 192)
@@ -66,7 +68,6 @@ nodePosition2 = Vector2i(1, 1)
 position = Vector2(320, 161)
 rotation = 1.5707964
 frame_progress = 0.9922942
-debugEnabled = true
 nodePosition1 = Vector2i(1, 0)
 nodePosition2 = Vector2i(1, 1)
 
