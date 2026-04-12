@@ -7,6 +7,7 @@ public partial class PauseMenu : Panel, IDebuggable
     #region Variables
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
+
     [Export] private Control settingsScreen;
 
     // --- Variables ---

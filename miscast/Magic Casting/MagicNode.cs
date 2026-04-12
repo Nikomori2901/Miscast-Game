@@ -7,6 +7,7 @@ public partial class MagicNode : Node2D, IDebuggable
     #region Variables
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
+
     [Export] public AnimatedSprite2D magicNodeSprite;
     [Export] public AnimatedSprite2D hoverSprite;
     [Export] public Vector2I gridPosition;

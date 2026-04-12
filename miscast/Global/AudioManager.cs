@@ -8,6 +8,7 @@ public partial class AudioManager : Singleton<AudioManager>, IDebuggable, IGameD
     #region Variables
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
+
     [Export] public float masterVolume;
     [Export] public float musicVolume;
     [Export] public float sfxVolume;

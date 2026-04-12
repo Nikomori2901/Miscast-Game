@@ -7,6 +7,7 @@ public partial class MainMenu : Node, IDebuggable
     #region Variables
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
+
     [Export] public Control mainScreen;
     [Export] public Control settingsScreen;
 

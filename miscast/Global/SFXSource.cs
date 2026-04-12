@@ -8,6 +8,7 @@ public partial class SFXSource : AudioStreamPlayer2D, IDebuggable
     #region Variables
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
+
     [Export] public AudioStream[] audioStreams;
     [Export] public MultipleSFXMode multipleSFXMode;
     [Export] public float volumeDeviation;

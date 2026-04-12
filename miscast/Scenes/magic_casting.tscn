@@ -19,67 +19,96 @@ texture = ExtResource("1_84aqd")
 [node name="Center Diagonal Connection" parent="." unique_id=1990087249 instance=ExtResource("3_n7iw2")]
 position = Vector2(298, 214)
 frame_progress = 0.89495534
+nodePosition1 = Vector2i(1, 1)
+nodePosition2 = Vector2i(0, 2)
 
 [node name="Center Diagonal Connection2" parent="." unique_id=629556615 instance=ExtResource("3_n7iw2")]
 position = Vector2(342, 170)
 rotation = 3.1415927
 frame_progress = 0.15041468
+nodePosition1 = Vector2i(1, 1)
+nodePosition2 = Vector2i(2, 0)
 
 [node name="Center Diagonal Connection3" parent="." unique_id=917227894 instance=ExtResource("3_n7iw2")]
 position = Vector2(298, 170)
 rotation = 1.5707964
 frame_progress = 0.09783756
+nodePosition1 = Vector2i(1, 1)
 
 [node name="Center Diagonal Connection4" parent="." unique_id=1977136987 instance=ExtResource("3_n7iw2")]
 position = Vector2(342, 214)
 rotation = -1.5707964
 frame_progress = 0.3921462
+nodePosition1 = Vector2i(1, 1)
+nodePosition2 = Vector2i(2, 2)
 
 [node name="Center Connection" parent="." unique_id=807643370 instance=ExtResource("3_l1tdc")]
 position = Vector2(289, 192)
+nodePosition1 = Vector2i(1, 1)
+nodePosition2 = Vector2i(0, 1)
 
 [node name="Center Connection2" parent="." unique_id=116070061 instance=ExtResource("3_l1tdc")]
 position = Vector2(351, 192)
 rotation = 3.1415927
+nodePosition1 = Vector2i(1, 1)
+nodePosition2 = Vector2i(2, 1)
 
 [node name="Center Connection3" parent="." unique_id=86870282 instance=ExtResource("3_l1tdc")]
 position = Vector2(320, 223)
 rotation = -1.5707964
 frame_progress = 0.44158554
+nodePosition1 = Vector2i(1, 1)
+nodePosition2 = Vector2i(1, 2)
 
 [node name="Center Connection4" parent="." unique_id=1984639055 instance=ExtResource("3_l1tdc")]
 position = Vector2(320, 161)
 rotation = 1.5707964
 frame_progress = 0.43583935
+nodePosition1 = Vector2i(1, 1)
+nodePosition2 = Vector2i(1, 0)
 
 [node name="Diagonal Connection" parent="." unique_id=629506587 instance=ExtResource("3_dihw6")]
 position = Vector2(288, 161)
+nodePosition1 = Vector2i(0, 1)
+nodePosition2 = Vector2i(1, 0)
 
 [node name="Diagonal Connection2" parent="." unique_id=1747890301 instance=ExtResource("3_dihw6")]
 position = Vector2(351, 161)
 rotation = 1.5707964
+nodePosition1 = Vector2i(1, 0)
+nodePosition2 = Vector2i(2, 1)
 
 [node name="Diagonal Connection3" parent="." unique_id=1093570398 instance=ExtResource("3_dihw6")]
 position = Vector2(351, 223)
 rotation = -3.1415925
+nodePosition1 = Vector2i(2, 1)
+nodePosition2 = Vector2i(1, 2)
 
 [node name="Diagonal Connection4" parent="." unique_id=1137716363 instance=ExtResource("3_dihw6")]
 position = Vector2(288, 223)
 rotation = -1.5707964
-
-[node name="Connection" parent="." unique_id=392761260 instance=ExtResource("4_l1tdc")]
-position = Vector2(320, 236)
-
-[node name="Connection2" parent="." unique_id=441994265 instance=ExtResource("4_l1tdc")]
-position = Vector2(320, 148)
+nodePosition1 = Vector2i(1, 2)
+nodePosition2 = Vector2i(0, 1)
 
 [node name="Connection3" parent="." unique_id=1921217110 instance=ExtResource("4_l1tdc")]
 position = Vector2(276, 192)
 rotation = 1.5707964
+nodePosition1 = Vector2i(0, 2)
+
+[node name="Connection2" parent="." unique_id=441994265 instance=ExtResource("4_l1tdc")]
+position = Vector2(320, 148)
+nodePosition2 = Vector2i(2, 0)
 
 [node name="Connection4" parent="." unique_id=979972726 instance=ExtResource("4_l1tdc")]
 position = Vector2(364, 192)
 rotation = 1.5707964
+nodePosition1 = Vector2i(2, 0)
+nodePosition2 = Vector2i(2, 2)
+
+[node name="Connection" parent="." unique_id=392761260 instance=ExtResource("4_l1tdc")]
+position = Vector2(320, 236)
+nodePosition1 = Vector2i(2, 2)
+nodePosition2 = Vector2i(0, 2)
 
 [node name="Top Left Node" parent="." unique_id=1273631225 instance=ExtResource("2_84aqd")]
 position = Vector2(276, 148)

@@ -8,6 +8,7 @@ public partial class SettingsScreen : Control, IDebuggable
     #region Variables
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
+
     [Export] public OptionButton windowModeButton;
     [Export] public OptionButton resolutionButton;
     [Export] public Slider masterVolumeSlider;

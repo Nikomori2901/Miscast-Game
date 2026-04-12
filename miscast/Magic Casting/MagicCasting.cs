@@ -18,13 +18,13 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
     public readonly Vector2I[] gridDirections = [new(0, -1), new(0, 1), new(-1, 0), new(1, 0), new(-1, -1), new(1, -1), new(-1, 1), new(1, 1), new(0, -2), new(0, 2), new(-2, 0), new(2, 0)];
 
     public List<MagicNode> activeNodes = new List<MagicNode>();
-    public List<Vector2I[]> activeConnections = new List<Vector2I[]>();
-    public Dictionary<(Vector2I, Vector2I), AnimatedSprite2D> connectionSprites = new();
+    public List<NodeConnection> activeConnections = new List<NodeConnection>();
+    public Dictionary<(Vector2I, Vector2I), NodeConnection> connectionMap = new();
 
     public bool casting = false;
     public MagicNode hoveredNode;
 
-    public List<Vector2I[]> targetPattern = new List<Vector2I[]>();
+    public List<NodeConnection> targetPattern = new List<NodeConnection>();
 
     #endregion
 
@@ -46,15 +46,22 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
             {
                 magicNodes.Add(magicNode);
             }
+
+            if (node is NodeConnection nodeConnection)
+            {
+                connectionMap[(nodeConnection.nodePosition1, nodeConnection.nodePosition2)] = nodeConnection;
+                connectionMap[(nodeConnection.nodePosition2, nodeConnection.nodePosition1)] = nodeConnection;
+            }
         }
 
-        for (int i = 0; i < magicNodes.Count; i++)
+        for (int nodeIndex = 0; nodeIndex < magicNodes.Count; nodeIndex++)
         {
-            Vector2I pos = magicNodes[i].gridPosition;
-            nodeGrid[pos.X, pos.Y] = magicNodes[i];
+            Vector2I pos = magicNodes[nodeIndex].gridPosition;
+            nodeGrid[pos.X, pos.Y] = magicNodes[nodeIndex];
         }
 
         DebugManager.DebugPrint(this, $"Node Grid Length: {nodeGrid.Length}");
+        DebugManager.DebugPrint(this, $"Connection Map Size: {connectionMap.Count}");
     }
 
     public override void _ExitTree()
@@ -130,6 +137,7 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
         {
             if (activeNodes.Last() != magicNode && IsNeighbour(magicNode, activeNodes.Last()))
             {
+                ActivateConnection(activeNodes.Last().gridPosition, magicNode.gridPosition);
                 activeNodes.Remove(magicNode);
                 activeNodes.Add(magicNode);
             }
@@ -159,9 +167,18 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 
     public void ActivateConnection(Vector2I nodePosition1, Vector2I nodePosition2)
     {
-        activeConnections.Add(new Vector2I[] {nodePosition1, nodePosition2});
+        if (!connectionMap.TryGetValue((nodePosition1, nodePosition2), out NodeConnection connection))
+        {
+            return;
+        }
 
-        // Activate Visual Somehow
+        if (activeConnections.Contains(connection))
+        {
+            return;
+        }
+
+        activeConnections.Add(connection);
+        connection.ShowConnection();
     }
 
     public void StartCasting()
@@ -185,9 +202,19 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
     {
         DebugManager.DebugPrint(this, "StopCasting");
 
+        if (CastValid())
+        {
+            CastSuccess();
+        }
+
         foreach (MagicNode magicNode in activeNodes)
         {
             magicNode.Deactivate();
+        }
+
+        foreach (NodeConnection connection in activeConnections)
+        {
+            connection.HideConnection();
         }
 
         activeNodes.Clear();
@@ -198,20 +225,12 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 
     public bool CastValid()
     {
-        foreach (Vector2I[] connection in targetPattern)
+        foreach (NodeConnection targetConnection in targetPattern)
         {
-            Vector2I connectionPos1 = connection[0];
-            Vector2I connectionPos2 = connection[1];
-
-            Vector2I[] activeConnection = [connectionPos1, connectionPos2];
-            Vector2I[] activeConnectionReversed = [connectionPos2, connectionPos1];
-
-            if (activeConnections.Contains(activeConnection) || activeConnections.Contains(activeConnectionReversed))
+            if (!activeConnections.Contains(targetConnection))
             {
-                continue;
+                return false;
             }
-
-            return false;
         }
 
         return true;

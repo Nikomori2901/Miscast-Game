@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bfm88qtcjnh2r"]
 
 [ext_resource type="SpriteFrames" uid="uid://b24foo64wsn20" path="res://Magic Casting/center_connection_frames.tres" id="1_i6koo"]
+[ext_resource type="Script" uid="uid://erqckueud01q" path="res://Magic Casting/NodeConnection.cs" id="2_y2f8v"]
 
 [node name="Center Connection" type="AnimatedSprite2D" unique_id=807643370]
 sprite_frames = ExtResource("1_i6koo")
 autoplay = "default"
 frame_progress = 0.45508647
+script = ExtResource("2_y2f8v")

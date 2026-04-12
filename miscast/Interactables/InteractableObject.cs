@@ -7,6 +7,7 @@ public partial class InteractableObject : Container, IDebuggable
     #region Variables
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
+
     [Export] private Control hoverLabel;
     [Export] private Control tempDialogueBox;
 
