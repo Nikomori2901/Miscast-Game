@@ -10,6 +10,7 @@
 
 [node name="Magic Casting" type="Node2D" unique_id=1307274607]
 script = ExtResource("1_xtw7t")
+debugEnabled = true
 
 [node name="Magic Circle" type="Sprite2D" parent="." unique_id=1811636589]
 position = Vector2(320, 192)

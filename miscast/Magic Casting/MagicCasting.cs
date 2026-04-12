@@ -22,6 +22,7 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
     public Dictionary<(Vector2I, Vector2I), AnimatedSprite2D> connectionSprites = new();
 
     public bool casting = false;
+    public MagicNode hoveredNode;
 
     public List<Vector2I[]> targetPattern = new List<Vector2I[]>();
 
@@ -113,7 +114,11 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 
         if (magicNode1.gridPosition != new Vector2I(1, 1) && magicNode2.gridPosition != new Vector2I(1, 1))
         {
-            return false;
+            Vector2I difference = magicNode2.gridPosition - magicNode1.gridPosition;
+            if ((difference.X == 0 && Math.Abs(difference.Y) == 1) || (difference.Y == 0 && Math.Abs(difference.X) == 1))
+            {
+                return false;
+            }
         }
 
         return GetNeighbours(magicNode1).Contains(magicNode2);
@@ -121,7 +126,15 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 
     public void NodeActivated(MagicNode magicNode)
     {
-        if (activeNodes.Contains(magicNode)) return;
+        if (activeNodes.Contains(magicNode))
+        {
+            if (activeNodes.Last() != magicNode && IsNeighbour(magicNode, activeNodes.Last()))
+            {
+                activeNodes.Remove(magicNode);
+                activeNodes.Add(magicNode);
+            }
+            return;
+        }
 
         if (activeNodes.Count >= 1)
         {
@@ -155,6 +168,11 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
     {
         DebugManager.DebugPrint(this, "StartCasting");
         casting = true;
+
+        if (hoveredNode != null)
+        {
+            NodeActivated(hoveredNode);
+        }
     }
 
     public void InvalidConnection()

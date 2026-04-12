@@ -38,6 +38,7 @@ public partial class MagicNode : Node2D, IDebuggable
     {
         DebugManager.DebugPrint(this, "Hovered");
         ShowHoverSprite();
+        MagicCasting.Instance.hoveredNode = this;
 
         if (MagicCasting.Instance.casting)
         {
@@ -49,6 +50,7 @@ public partial class MagicNode : Node2D, IDebuggable
     {
         DebugManager.DebugPrint(this, "UnHovered");
         HideHoverSprite();
+        MagicCasting.Instance.hoveredNode = null;
     }
 
     public void Activate()
