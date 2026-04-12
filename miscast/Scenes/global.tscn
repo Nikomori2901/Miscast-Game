@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b2fctaerctcrm"]
+
+[ext_resource type="Script" uid="uid://crfwjvu2kcfdh" path="res://Global/GameDataManager.cs" id="1_y7gcx"]
+[ext_resource type="Script" uid="uid://birpl01irtk38" path="res://Global/GameManager.cs" id="2_tlnjv"]
+[ext_resource type="Script" uid="uid://dqeumwtri8p7i" path="res://Global/SceneManager.cs" id="3_y7gcx"]
+[ext_resource type="Script" uid="uid://c8r6a22jwd5ml" path="res://Global/SettingsManager.cs" id="4_tlnjv"]
+[ext_resource type="Script" uid="uid://clcjpjho64pok" path="res://Global/AudioManager.cs" id="5_8eqhs"]
+[ext_resource type="Script" uid="uid://bfm3ts2sbvwr4" path="res://Global/DebugManager.cs" id="6_c71dq"]
+
+[node name="Global" type="Node" unique_id=1127593491]
+process_mode = 3
+
+[node name="Game Data Manager" type="Node" parent="." unique_id=618312293]
+script = ExtResource("1_y7gcx")
+
+[node name="Game Manager" type="Node" parent="." unique_id=465456633]
+script = ExtResource("2_tlnjv")
+
+[node name="Scene Manager" type="Node" parent="." unique_id=1483333128]
+script = ExtResource("3_y7gcx")
+
+[node name="Settings Manager" type="Node" parent="." unique_id=1655772106]
+script = ExtResource("4_tlnjv")
+
+[node name="Audio Manager" type="Node" parent="." unique_id=526742453 node_paths=PackedStringArray("sfxDictionary", "musicDictionary")]
+script = ExtResource("5_8eqhs")
+sfxDictionary = {}
+musicDictionary = {}
+
+[node name="Music" type="Node" parent="Audio Manager" unique_id=1162120096]
+
+[node name="Test Music" type="AudioStreamPlayer2D" parent="Audio Manager/Music" unique_id=1151494954]
+bus = &"Music"
+
+[node name="SFX" type="Node" parent="Audio Manager" unique_id=1483086013]
+
+[node name="Test SFX" type="AudioStreamPlayer2D" parent="Audio Manager/SFX" unique_id=1375872534]
+bus = &"SFX"
+
+[node name="Debug Manager" type="Node" parent="." unique_id=1126097913]
+script = ExtResource("6_c71dq")

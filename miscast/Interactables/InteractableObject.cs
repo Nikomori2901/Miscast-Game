@@ -1,16 +1,34 @@
 using Godot;
 using System;
+using Miscast;
 
-public partial class InteractableObject : Container
+public partial class InteractableObject : Container, IDebuggable
 {
+    #region Variables
+    // --- Export Variables ---
+    [Export] public bool debugEnabled { get; set; } = false;
     [Export] private Control hoverLabel;
     [Export] private Control tempDialogueBox;
-    
+
+    // --- Variables ---
+
+    #endregion
+
+    #region Events
+
+    #endregion
+
+    #region Inherited Methods
+    // ----- Lifecycle Methods -----
     public override void _Ready()
     {
-        base._Ready();
+        DebugManager.DebugPrint(this, "InteractableObject Ready");
         tempDialogueBox.Visible = false;
     }
+
+    #endregion
+
+    #region Methods
 
     public void OnInput(InputEvent inputEvent)
     {
@@ -25,29 +43,23 @@ public partial class InteractableObject : Container
 
     public void OnLeftClick()
     {
-        GD.Print("OnLeftClick");
-        if (tempDialogueBox.Visible)
-        {
-            tempDialogueBox.Visible = false;
-        }
-
-        else
-        {
-            tempDialogueBox.Visible = true;
-        }
+        DebugManager.DebugPrint(this, "OnLeftClick");
+        tempDialogueBox.Visible = !tempDialogueBox.Visible;
     }
-    
+
     private void OnMouseEnter()
     {
-        GD.Print("OnMouseEnter");
+        DebugManager.DebugPrint(this, "OnMouseEnter");
         hoverLabel.Show();
         Modulate = new Color(1.2f, 1.2f, 1.2f);
     }
 
     private void OnMouseExit()
     {
+        DebugManager.DebugPrint(this, "OnMouseExit");
         hoverLabel.Hide();
-        GD.Print("OnMouseExit");
         Modulate = new Color(1, 1, 1);
     }
+
+    #endregion
 }

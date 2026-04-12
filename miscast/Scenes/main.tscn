@@ -1,0 +1,273 @@
+[gd_scene load_steps=7 format=3 uid="uid://bea0hl8cvqu8v"]
+
+[ext_resource type="Theme" uid="uid://b30ludto1lkkc" path="res://Fonts & Theme/default_theme.tres" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://bok0twcxf264p" path="res://Global/PauseMenu.cs" id="1_jjvhh"]
+[ext_resource type="LabelSettings" uid="uid://bwf3dcbg34e8n" path="res://Fonts & Theme/character_name_ls.tres" id="2_8gbba"]
+[ext_resource type="Script" uid="uid://1utpr7066kr3" path="res://Global/SettingsScreen.cs" id="2_kry3j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uu0lx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahukf"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Game UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Global UI" type="Control" parent="Game UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Pause Menu" type="Panel" parent="Game UI/Global UI" node_paths=PackedStringArray("SettingsScreen")]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+script = ExtResource("1_jjvhh")
+SettingsScreen = NodePath("Settings Screen")
+
+[node name="Settings Screen" type="Control" parent="Game UI/Global UI/Pause Menu" node_paths=PackedStringArray("windowModeButton", "resolutionButton", "masterVolumeSlider", "masterVolumeLabel", "musicVolumeSlider", "musicVolumeLabel", "sfxVolumeSlider", "sfxVolumeLabel")]
+z_index = 20
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+script = ExtResource("2_kry3j")
+windowModeButton = NodePath("Setting Controls/Box 1/Box 2/Column 2/Window Mode")
+resolutionButton = NodePath("Setting Controls/Box 1/Box 2/Column 3/Resolution")
+masterVolumeSlider = NodePath("Setting Controls/Box 1/Box 2/Column 2/Master Slider")
+masterVolumeLabel = NodePath("Setting Controls/Box 1/Box 2/Column 3/Master Volume Number")
+musicVolumeSlider = NodePath("Setting Controls/Box 1/Box 2/Column 2/Music Slider")
+musicVolumeLabel = NodePath("Setting Controls/Box 1/Box 2/Column 3/Music Volume Number")
+sfxVolumeSlider = NodePath("Setting Controls/Box 1/Box 2/Column 2/SFX Slider")
+sfxVolumeLabel = NodePath("Setting Controls/Box 1/Box 2/Column 3/SFX Volume Number")
+
+[node name="Settings Title Text" type="TextureRect" parent="Game UI/Global UI/Pause Menu/Settings Screen"]
+z_index = 20
+material = SubResource("ShaderMaterial_uu0lx")
+layout_mode = 2
+offset_left = 232.0
+offset_top = 22.0
+offset_right = 404.0
+offset_bottom = 63.0
+stretch_mode = 3
+
+[node name="Setting Controls" type="Control" parent="Game UI/Global UI/Pause Menu/Settings Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Box 1" type="VBoxContainer" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+alignment = 1
+
+[node name="Box 2" type="HBoxContainer" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Column 1" type="VBoxContainer" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Resolution Text" type="TextureRect" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1"]
+material = SubResource("ShaderMaterial_ahukf")
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Master Text" type="TextureRect" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1"]
+z_index = 20
+material = SubResource("ShaderMaterial_uu0lx")
+custom_minimum_size = Vector2(0, 32)
+layout_direction = 2
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Music Text" type="TextureRect" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1"]
+z_index = 20
+material = SubResource("ShaderMaterial_uu0lx")
+custom_minimum_size = Vector2(0, 32)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 5
+stretch_mode = 3
+
+[node name="SFX Text" type="TextureRect" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1"]
+z_index = 20
+material = SubResource("ShaderMaterial_uu0lx")
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 5
+stretch_mode = 3
+
+[node name="Column 2" type="VBoxContainer" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Window Mode" type="OptionButton" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Exclusive Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+
+[node name="Master Slider" type="HSlider" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2"]
+z_index = 20
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+step = 5.0
+value = 100.0
+rounded = true
+tick_count = 20
+ticks_on_borders = true
+
+[node name="Music Slider" type="HSlider" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2"]
+z_index = 20
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+step = 5.0
+value = 100.0
+rounded = true
+tick_count = 20
+ticks_on_borders = true
+
+[node name="SFX Slider" type="HSlider" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2"]
+z_index = 20
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+step = 5.0
+value = 100.0
+rounded = true
+tick_count = 20
+ticks_on_borders = true
+
+[node name="Column 3" type="VBoxContainer" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Resolution" type="OptionButton" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+disabled = true
+selected = 2
+item_count = 3
+popup/item_0/text = "640 x 360"
+popup/item_0/id = 0
+popup/item_1/text = "1280 x 720"
+popup/item_1/id = 1
+popup/item_2/text = "1920 x 1080"
+popup/item_2/id = 2
+
+[node name="Master Volume Number" type="Label" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music Volume Number" type="Label" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX Volume Number" type="Label" parent="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Return Button" type="TextureButton" parent="Game UI/Global UI/Pause Menu/Settings Screen"]
+z_index = 20
+material = SubResource("ShaderMaterial_uu0lx")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 84.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+stretch_mode = 3
+
+[node name="DialogueBox" type="Control" parent="Game UI/Global UI"]
+anchors_preset = 0
+offset_left = 160.0
+offset_top = 192.0
+offset_right = 480.0
+offset_bottom = 320.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Game UI/Global UI/DialogueBox"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -56.0
+offset_right = 424.0
+offset_bottom = 40.0
+
+[node name="Dialogue Text" type="RichTextLabel" parent="Game UI/Global UI/DialogueBox/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_bo1nx")
+
+[node name="Character Name" type="Label" parent="Game UI/Global UI/DialogueBox/HBoxContainer"]
+layout_mode = 2
+text = "Character Name"
+label_settings = ExtResource("2_8gbba")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialogue Box Frame" type="NinePatchRect" parent="Game UI/Global UI/DialogueBox/HBoxContainer"]
+layout_mode = 2
+
+[node name="Portrait Frame" type="TextureRect" parent="Game UI/Global UI/DialogueBox/HBoxContainer"]
+layout_mode = 2
+
+[node name="Portrait Image" type="TextureRect" parent="Game UI/Global UI/DialogueBox/HBoxContainer"]
+layout_mode = 2
+
+[connection signal="item_selected" from="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/Window Mode" to="Game UI/Global UI/Pause Menu/Settings Screen" method="WindowModeChanged"]
+[connection signal="value_changed" from="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/Master Slider" to="Game UI/Global UI/Pause Menu/Settings Screen" method="MasterVolumeChanged"]
+[connection signal="value_changed" from="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/Music Slider" to="Game UI/Global UI/Pause Menu/Settings Screen" method="MusicVolumeChanged"]
+[connection signal="value_changed" from="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/SFX Slider" to="Game UI/Global UI/Pause Menu/Settings Screen" method="SFXVolumeChanged"]
+[connection signal="item_selected" from="Game UI/Global UI/Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3/Resolution" to="Game UI/Global UI/Pause Menu/Settings Screen" method="ResolutionChanged"]

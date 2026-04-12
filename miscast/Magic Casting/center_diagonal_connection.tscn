@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://daccyavt7hclw"]
+
+[ext_resource type="SpriteFrames" uid="uid://xiebpl3lf1jk" path="res://Magic Casting/center_diagonal_connection_frames.tres" id="1_tibw7"]
+
+[node name="Center Diagonal Connection" type="AnimatedSprite2D" unique_id=1990087249]
+sprite_frames = ExtResource("1_tibw7")
+autoplay = "default"
+frame_progress = 0.43846837

@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbkvxgte2fi5b"]
 
-[ext_resource type="Script" uid="uid://bh2fqauggiafu" path="res://InteractableObject.cs" id="1_2c62f"]
-[ext_resource type="Texture2D" uid="uid://dfocittvxksvf" path="res://placeholder.png" id="2_d5x1h"]
+[ext_resource type="Texture2D" uid="uid://dfocittvxksvf" path="res://Dialogue System/placeholder_frame.png" id="1_8od7v"]
+[ext_resource type="Script" uid="uid://bh2fqauggiafu" path="res://Interactables/InteractableObject.cs" id="2_qc4db"]
 
-[node name="Main Scene" type="Node2D"]
+[node name="Testing Scene" type="Node2D"]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -20,7 +20,7 @@ offset_bottom = 328.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UI/Dialogue Box"]
 layout_mode = 2
-texture = ExtResource("2_d5x1h")
+texture = ExtResource("1_8od7v")
 region_rect = Rect2(0, 0, 54, 54)
 patch_margin_left = 6
 patch_margin_top = 6
@@ -45,7 +45,7 @@ offset_left = 16.0
 offset_top = -152.0
 offset_right = 184.0
 offset_bottom = 8.0
-texture = ExtResource("2_d5x1h")
+texture = ExtResource("1_8od7v")
 region_rect = Rect2(0, 0, 54, 54)
 patch_margin_left = 6
 patch_margin_top = 6
@@ -70,10 +70,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="UI/Dialogue Box/Control"]
+layout_mode = 0
 offset_top = -24.0
 offset_right = 136.0
 offset_bottom = 8.0
-texture = ExtResource("2_d5x1h")
+texture = ExtResource("1_8od7v")
 region_rect = Rect2(0, 0, 54, 54)
 patch_margin_left = 6
 patch_margin_top = 6
@@ -104,13 +105,13 @@ offset_left = 416.0
 offset_top = 96.0
 offset_right = 576.0
 offset_bottom = 192.0
-script = ExtResource("1_2c62f")
+script = ExtResource("2_qc4db")
 hoverLabel = NodePath("../Hover Label")
 tempDialogueBox = NodePath("../Dialogue Box")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UI/Interactable Object"]
 layout_mode = 2
-texture = ExtResource("2_d5x1h")
+texture = ExtResource("1_8od7v")
 region_rect = Rect2(0, 0, 54, 54)
 patch_margin_left = 6
 patch_margin_top = 6
@@ -137,6 +138,7 @@ vertical_alignment = 1
 
 [node name="Hover Label" type="PanelContainer" parent="UI"]
 visible = false
+layout_mode = 0
 offset_left = 424.0
 offset_top = 64.0
 offset_right = 569.0

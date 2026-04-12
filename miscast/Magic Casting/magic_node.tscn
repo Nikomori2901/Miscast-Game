@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cd7v7qkoaseda"]
+
+[ext_resource type="Script" uid="uid://r52au1du1q45" path="res://Magic Casting/MagicNode.cs" id="1_p7am6"]
+[ext_resource type="SpriteFrames" uid="uid://dob8tnw2orefu" path="res://Magic Casting/node_frames.tres" id="2_5dpjx"]
+[ext_resource type="SpriteFrames" uid="uid://ctcissdj60us8" path="res://Magic Casting/hover_frames.tres" id="3_5dpjx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xtw7t"]
+radius = 10.049875
+
+[node name="Magic Node" type="Node2D" unique_id=1994814419 node_paths=PackedStringArray("magicNodeSprite", "hoverSprite")]
+script = ExtResource("1_p7am6")
+magicNodeSprite = NodePath("Sprite")
+hoverSprite = NodePath("Hover Sprite")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=43791063]
+sprite_frames = ExtResource("2_5dpjx")
+frame_progress = 0.839531
+
+[node name="Hover Sprite" type="AnimatedSprite2D" parent="." unique_id=1637731713]
+sprite_frames = ExtResource("3_5dpjx")
+frame_progress = 0.59314454
+
+[node name="Area" type="Area2D" parent="." unique_id=1479353420]
+
+[node name="Collision Shape" type="CollisionShape2D" parent="Area" unique_id=1605953365]
+shape = SubResource("CircleShape2D_xtw7t")
+
+[connection signal="mouse_entered" from="Area" to="." method="Hovered"]
+[connection signal="mouse_exited" from="Area" to="." method="UnHovered"]
