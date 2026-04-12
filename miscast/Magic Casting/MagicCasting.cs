@@ -178,7 +178,7 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
         }
 
         activeConnections.Add(connection);
-        connection.ShowConnection();
+        connection.ShowConnection(nodePosition1);
     }
 
     public void StartCasting()

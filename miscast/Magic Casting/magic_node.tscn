@@ -9,7 +9,6 @@ radius = 10.049875
 
 [node name="Magic Node" type="Node2D" unique_id=1994814419 node_paths=PackedStringArray("magicNodeSprite", "hoverSprite")]
 script = ExtResource("1_p7am6")
-debugEnabled = true
 magicNodeSprite = NodePath("Sprite")
 hoverSprite = NodePath("Hover Sprite")
 

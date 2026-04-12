@@ -25,9 +25,30 @@ public partial class NodeConnection : AnimatedSprite2D, IDebuggable
 
     #region Methods
 
-    public void ShowConnection()
+    public void ShowConnection(Vector2I fromPosition)
     {
-        DebugManager.DebugPrint(this, $"ShowConnection {nodePosition1} - {nodePosition2}");
+        DebugManager.DebugPrint(this, $"ShowConnection {fromPosition} -> {(fromPosition == nodePosition1 ? nodePosition2 : nodePosition1)}");
+
+        bool reversed = fromPosition == nodePosition2;
+        if (reversed)
+        {
+            Vector2I direction = nodePosition2 - nodePosition1;
+            float rotationDeg = Mathf.Abs(Mathf.Round(RotationDegrees)) % 360;
+            bool rotated = rotationDeg == 90 || rotationDeg == 270;
+
+            if (rotated)
+            {
+                FlipH = direction.Y != 0;
+                FlipV = direction.X != 0;
+            }
+
+            else
+            {
+                FlipH = direction.X != 0;
+                FlipV = direction.Y != 0;
+            }
+        }
+
         Visible = true;
         Play();
     }
@@ -35,6 +56,8 @@ public partial class NodeConnection : AnimatedSprite2D, IDebuggable
     public void HideConnection()
     {
         DebugManager.DebugPrint(this, $"HideConnection {nodePosition1} - {nodePosition2}");
+        FlipH = false;
+        FlipV = false;
         Visible = false;
         Stop();
     }
