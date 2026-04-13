@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p44obbvvkknd"
-path="res://.godot/imported/Area Background.png-dc4f282e4f7f292a0df484931451c1c6.ctex"
+uid="uid://de28h7yqrtby3"
+path="res://.godot/imported/Arrow Hover.png-a51ed2e965f6d8ab2105696dc5092adf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Area Background.png"
-dest_files=["res://.godot/imported/Area Background.png-dc4f282e4f7f292a0df484931451c1c6.ctex"]
+source_file="res://Interactables/Arrow Hover.png"
+dest_files=["res://.godot/imported/Arrow Hover.png-a51ed2e965f6d8ab2105696dc5092adf.ctex"]
 
 [params]
 

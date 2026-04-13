@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bq3cg48a548b7"]
 
 [ext_resource type="PackedScene" uid="uid://d2sbo652la5k4" path="res://Scenes/game_ui.tscn" id="1_1bmo1"]
-[ext_resource type="Texture2D" uid="uid://p44obbvvkknd" path="res://Area Background.png" id="1_a4h6d"]
-[ext_resource type="Texture2D" uid="uid://ws6utj5v4tmm" path="res://Mob Silhouette.png" id="2_1bmo1"]
+[ext_resource type="Texture2D" uid="uid://p44obbvvkknd" path="res://Areas/Area Background.png" id="1_a4h6d"]
+[ext_resource type="Texture2D" uid="uid://ws6utj5v4tmm" path="res://Interactables/Mob Silhouette.png" id="2_1bmo1"]
 [ext_resource type="PackedScene" uid="uid://c1lvws3nvykis" path="res://Interactables/interactable_object.tscn" id="4_a4h6d"]
 [ext_resource type="Texture2D" uid="uid://ctsa6glwxgu7o" path="res://Interactables/Door.png" id="4_ubhsk"]
 [ext_resource type="Texture2D" uid="uid://dhydbr3otaaug" path="res://Interactables/Door Hover.png" id="5_0y7e3"]
+[ext_resource type="Texture2D" uid="uid://dhlqta2ob368r" path="res://Interactables/Arrow.png" id="7_k0qim"]
+[ext_resource type="Texture2D" uid="uid://de28h7yqrtby3" path="res://Interactables/Arrow Hover.png" id="8_f3cvr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0qim"]
 atlas = ExtResource("5_0y7e3")
@@ -89,6 +91,94 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sr22i"]
+size = Vector2(100, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53typ"]
+atlas = ExtResource("8_f3cvr")
+region = Rect2(0, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfnbm"]
+atlas = ExtResource("8_f3cvr")
+region = Rect2(84, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkgis"]
+atlas = ExtResource("8_f3cvr")
+region = Rect2(168, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y7sm"]
+atlas = ExtResource("8_f3cvr")
+region = Rect2(252, 0, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyerk"]
+atlas = ExtResource("8_f3cvr")
+region = Rect2(0, 84, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hhr8"]
+atlas = ExtResource("8_f3cvr")
+region = Rect2(84, 84, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhj0v"]
+atlas = ExtResource("8_f3cvr")
+region = Rect2(168, 84, 84, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybxiu"]
+atlas = ExtResource("8_f3cvr")
+region = Rect2(252, 84, 84, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4nem"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53typ")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfnbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkgis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y7sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyerk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hhr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhj0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybxiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhj0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hhr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyerk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y7sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkgis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfnbm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3cvr"]
+size = Vector2(64, 176)
+
 [node name="Hallway 1" type="Node2D" unique_id=887831976]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=698375842]
@@ -110,6 +200,23 @@ texture = ExtResource("4_ubhsk")
 sprite_frames = SubResource("SpriteFrames_ubhsk")
 frame_progress = 0.20442763
 
+[node name="Collision Shape" parent="Door/Area" parent_id_path=PackedInt32Array(216219292, 1097383461) index="0" unique_id=1827256794]
+shape = SubResource("RectangleShape2D_sr22i")
+
+[node name="Arrow" parent="." unique_id=1317807225 instance=ExtResource("4_a4h6d")]
+position = Vector2(32, 92)
+
+[node name="Sprite" parent="Arrow" index="0" unique_id=1734528953]
+texture = ExtResource("7_k0qim")
+
+[node name="Hover Sprite" parent="Arrow" index="1" unique_id=851245358]
+sprite_frames = SubResource("SpriteFrames_y4nem")
+frame_progress = 0.065300345
+
+[node name="Collision Shape" parent="Arrow/Area" parent_id_path=PackedInt32Array(1317807225, 1097383461) index="0" unique_id=1827256794]
+shape = SubResource("RectangleShape2D_f3cvr")
+
 [node name="Game UI" parent="." unique_id=2027637410 instance=ExtResource("1_1bmo1")]
 
 [editable path="Door"]
+[editable path="Arrow"]

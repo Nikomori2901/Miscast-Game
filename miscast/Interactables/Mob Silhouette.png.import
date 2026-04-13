@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djxbnna5p50xs"
-path="res://.godot/imported/Door Hover.png-ac411d9beaf90893f8d7fa92c7e4c35f.ctex"
+uid="uid://ws6utj5v4tmm"
+path="res://.godot/imported/Mob Silhouette.png-e9f325c81265c77c5ed37db26b6f3710.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Door Hover.png"
-dest_files=["res://.godot/imported/Door Hover.png-ac411d9beaf90893f8d7fa92c7e4c35f.ctex"]
+source_file="res://Interactables/Mob Silhouette.png"
+dest_files=["res://.godot/imported/Mob Silhouette.png-e9f325c81265c77c5ed37db26b6f3710.ctex"]
 
 [params]
 

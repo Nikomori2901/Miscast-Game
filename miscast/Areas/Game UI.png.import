@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpxu03f7biwvd"
-path="res://.godot/imported/Magic Casting Background.png-11c4f40b63bdab3e484d4e7f049a0320.ctex"
+uid="uid://b8llip2h17s05"
+path="res://.godot/imported/Game UI.png-201ea54bda5dec042e247718c2c0a132.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Magic Casting Background.png"
-dest_files=["res://.godot/imported/Magic Casting Background.png-11c4f40b63bdab3e484d4e7f049a0320.ctex"]
+source_file="res://Areas/Game UI.png"
+dest_files=["res://.godot/imported/Game UI.png-201ea54bda5dec042e247718c2c0a132.ctex"]
 
 [params]
 

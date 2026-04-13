@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bohq8ssjfsyyy"
-path="res://.godot/imported/Tooltip Window.png-6d8e1050ad21bd4819707cde57cc1cde.ctex"
+uid="uid://bpxu03f7biwvd"
+path="res://.godot/imported/Magic Casting Background.png-b00b79ab9e664882a6fbcec217d17621.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tooltip Window.png"
-dest_files=["res://.godot/imported/Tooltip Window.png-6d8e1050ad21bd4819707cde57cc1cde.ctex"]
+source_file="res://Areas/Magic Casting Background.png"
+dest_files=["res://.godot/imported/Magic Casting Background.png-b00b79ab9e664882a6fbcec217d17621.ctex"]
 
 [params]
 

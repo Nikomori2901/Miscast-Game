@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://djryp05xx8ngq"]
 
 [ext_resource type="Texture2D" uid="uid://ce5ofh272jrwu" path="res://Magic Casting/Sprites/Magic Circle.png" id="1_84aqd"]
-[ext_resource type="Texture2D" uid="uid://bpxu03f7biwvd" path="res://Magic Casting Background.png" id="1_ikdv6"]
+[ext_resource type="Texture2D" uid="uid://bpxu03f7biwvd" path="res://Areas/Magic Casting Background.png" id="1_ikdv6"]
 [ext_resource type="Script" uid="uid://caxtnxce0s5sr" path="res://Magic Casting/MagicCasting.cs" id="1_xtw7t"]
 [ext_resource type="PackedScene" uid="uid://cd7v7qkoaseda" path="res://Magic Casting/Prefabs/magic_node.tscn" id="2_84aqd"]
 [ext_resource type="Resource" uid="uid://bjv4mx4bnycj3" path="res://Magic Casting/Spell Patterns/Test Pattern.tres" id="2_rwesp"]

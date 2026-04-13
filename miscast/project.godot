@@ -18,6 +18,10 @@ config/name="Miscast"
 run/main_scene="uid://bea0hl8cvqu8v"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="res://Audio/default_bus_layout.tres"
+
 [autoload]
 
 Global="*res://Scenes/global.tscn"

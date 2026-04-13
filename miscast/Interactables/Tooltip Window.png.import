@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by2f7rvwlnufv"
-path="res://.godot/imported/Background Grid Guide.png-e27732e0603182ece71305acefa918c3.ctex"
+uid="uid://bohq8ssjfsyyy"
+path="res://.godot/imported/Tooltip Window.png-d31857fd120d607c4edd83ace4cd5c50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Grid Guide.png"
-dest_files=["res://.godot/imported/Background Grid Guide.png-e27732e0603182ece71305acefa918c3.ctex"]
+source_file="res://Interactables/Tooltip Window.png"
+dest_files=["res://.godot/imported/Tooltip Window.png-d31857fd120d607c4edd83ace4cd5c50.ctex"]
 
 [params]
 

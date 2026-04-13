@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2sbo652la5k4"]
 
 [ext_resource type="Script" uid="uid://bok0twcxf264p" path="res://Global/PauseMenu.cs" id="1_3rlp6"]
-[ext_resource type="Texture2D" uid="uid://b8llip2h17s05" path="res://Game UI.png" id="1_obik5"]
+[ext_resource type="Texture2D" uid="uid://b8llip2h17s05" path="res://Areas/Game UI.png" id="1_obik5"]
 [ext_resource type="Script" uid="uid://1utpr7066kr3" path="res://Global/SettingsScreen.cs" id="2_obik5"]
 [ext_resource type="Theme" uid="uid://b30ludto1lkkc" path="res://Dialogue/Themes & Fonts/default_theme.tres" id="3_xlnb1"]
 [ext_resource type="Texture2D" uid="uid://dgqraykmk18k7" path="res://Dialogue/Sprites/Dialogue Box.png" id="4_vealc"]
@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://bq7f0exdr07jv" path="res://Dialogue/Passages/test_passage.tres" id="6_5wnrh"]
 [ext_resource type="Texture2D" uid="uid://dupehk4ldirjm" path="res://Dialogue/Sprites/Name Plate.png" id="6_ltg2s"]
 [ext_resource type="Script" uid="uid://16nps3nudb8q" path="res://Interactables/Tooltip.cs" id="11_dvsk4"]
-[ext_resource type="Texture2D" uid="uid://bohq8ssjfsyyy" path="res://Tooltip Window.png" id="12_74ohg"]
+[ext_resource type="Texture2D" uid="uid://bohq8ssjfsyyy" path="res://Interactables/Tooltip Window.png" id="12_74ohg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uu0lx"]
 
@@ -338,6 +338,7 @@ theme = ExtResource("3_xlnb1")
 text = "Dialogue Text"
 
 [node name="Tooltip" type="Control" parent="." unique_id=480090020 node_paths=PackedStringArray("tooltipLabel")]
+visible = false
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("11_dvsk4")
@@ -351,7 +352,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -26.0
-offset_top = -14.0
+offset_top = -18.0
 offset_right = 26.0
 offset_bottom = -2.0
 grow_horizontal = 2

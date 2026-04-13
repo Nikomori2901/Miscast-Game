@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DialoguePassage" format=3 uid="uid://batuxdk0343io"]
 
 [ext_resource type="Script" uid="uid://muauvv4uh74s" path="res://Dialogue/DialoguePassage.cs" id="1_4k0fw"]
-[ext_resource type="Texture2D" uid="uid://ws6utj5v4tmm" path="res://Mob Silhouette.png" id="1_jgrq7"]
+[ext_resource type="Texture2D" uid="uid://ws6utj5v4tmm" path="res://Interactables/Mob Silhouette.png" id="1_jgrq7"]
 
 [resource]
 script = ExtResource("1_4k0fw")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ws6utj5v4tmm"
-path="res://.godot/imported/Mob Silhouette.png-ecece3556a9a4a9b8b22257359b4c03d.ctex"
+uid="uid://dhlqta2ob368r"
+path="res://.godot/imported/Arrow.png-c1f0aa7999b2389abd757cec95cde556.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mob Silhouette.png"
-dest_files=["res://.godot/imported/Mob Silhouette.png-ecece3556a9a4a9b8b22257359b4c03d.ctex"]
+source_file="res://Interactables/Arrow.png"
+dest_files=["res://.godot/imported/Arrow.png-c1f0aa7999b2389abd757cec95cde556.ctex"]
 
 [params]
 
