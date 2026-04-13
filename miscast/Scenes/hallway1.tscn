@@ -96,19 +96,20 @@ texture = ExtResource("1_a4h6d")
 centered = false
 
 [node name="MobSilhouette" type="Sprite2D" parent="." unique_id=512041316]
-position = Vector2(458, 114)
+position = Vector2(136, 128)
 texture = ExtResource("2_1bmo1")
 
-[node name="Interactable Object" parent="." unique_id=216219292 instance=ExtResource("4_a4h6d")]
-position = Vector2(192, 98)
+[node name="Door" parent="." unique_id=216219292 instance=ExtResource("4_a4h6d")]
+position = Vector2(496, 98)
+tooltipText = "Your Room"
 
-[node name="Sprite" parent="Interactable Object" index="0" unique_id=1734528953]
+[node name="Sprite" parent="Door" index="0" unique_id=1734528953]
 texture = ExtResource("4_ubhsk")
 
-[node name="Hover Sprite" parent="Interactable Object" index="1" unique_id=851245358]
+[node name="Hover Sprite" parent="Door" index="1" unique_id=851245358]
 sprite_frames = SubResource("SpriteFrames_ubhsk")
 frame_progress = 0.20442763
 
 [node name="Game UI" parent="." unique_id=2027637410 instance=ExtResource("1_1bmo1")]
 
-[editable path="Interactable Object"]
+[editable path="Door"]

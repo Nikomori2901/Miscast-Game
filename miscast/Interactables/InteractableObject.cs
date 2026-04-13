@@ -10,6 +10,7 @@ public partial class InteractableObject : Node2D, IDebuggable
 
     [Export] private Sprite2D sprite;
     [Export] private AnimatedSprite2D hoverSprite;
+    [Export] private string tooltipText = "Interact";
 
     // --- Variables ---
 
@@ -35,12 +36,14 @@ public partial class InteractableObject : Node2D, IDebuggable
     {
         DebugManager.DebugPrint(this, "Hovered");
         ShowHoverSprite();
+        Tooltip.Instance.ShowTooltip(tooltipText);
     }
 
     public void UnHovered()
     {
         DebugManager.DebugPrint(this, "UnHovered");
         HideHoverSprite();
+        Tooltip.Instance.HideTooltip();
     }
 
     public void OnAreaInputEvent(Node viewport, InputEvent inputEvent, long shapeIndex)

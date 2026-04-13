@@ -10,6 +10,8 @@
 [ext_resource type="FontFile" uid="uid://nsmg205ckeui" path="res://Dialogue/Themes & Fonts/Everyday_Standard.ttf" id="5_xlnb1"]
 [ext_resource type="Resource" uid="uid://bq7f0exdr07jv" path="res://Dialogue/Passages/test_passage.tres" id="6_5wnrh"]
 [ext_resource type="Texture2D" uid="uid://dupehk4ldirjm" path="res://Dialogue/Sprites/Name Plate.png" id="6_ltg2s"]
+[ext_resource type="Script" uid="uid://16nps3nudb8q" path="res://Interactables/Tooltip.cs" id="11_dvsk4"]
+[ext_resource type="Texture2D" uid="uid://bohq8ssjfsyyy" path="res://Tooltip Window.png" id="12_74ohg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uu0lx"]
 
@@ -18,6 +20,17 @@
 [sub_resource type="LabelSettings" id="LabelSettings_vealc"]
 font = ExtResource("5_xlnb1")
 font_size = 14
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvsk4"]
+texture = ExtResource("12_74ohg")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_dvsk4"]
+font = ExtResource("5_xlnb1")
+font_size = 7
 
 [node name="Game UI" type="Control" unique_id=2027637410]
 layout_mode = 3
@@ -323,6 +336,35 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_xlnb1")
 text = "Dialogue Text"
+
+[node name="Tooltip" type="Control" parent="." unique_id=480090020 node_paths=PackedStringArray("tooltipLabel")]
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("11_dvsk4")
+tooltipLabel = NodePath("Background/Label")
+
+[node name="Background" type="PanelContainer" parent="Tooltip" unique_id=261824046]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -14.0
+offset_right = 26.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dvsk4")
+
+[node name="Label" type="Label" parent="Tooltip/Background" unique_id=1725677435]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "test"
+label_settings = SubResource("LabelSettings_dvsk4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="item_selected" from="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/Window Mode" to="Pause Menu/Settings Screen" method="WindowModeChanged"]
 [connection signal="value_changed" from="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/Master Slider" to="Pause Menu/Settings Screen" method="MasterVolumeChanged"]
