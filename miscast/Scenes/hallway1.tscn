@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bq3cg48a548b7"]
+
+[ext_resource type="PackedScene" uid="uid://d2sbo652la5k4" path="res://game_ui.tscn" id="1_1bmo1"]
+[ext_resource type="Texture2D" uid="uid://b8llip2h17s05" path="res://Game UI.png" id="1_6uphi"]
+[ext_resource type="Texture2D" uid="uid://ws6utj5v4tmm" path="res://Mob Silhouette.png" id="2_1bmo1"]
+
+[node name="Node2D" type="Node2D" unique_id=887831976]
+
+[node name="Game UI" parent="." unique_id=2027637410 instance=ExtResource("1_1bmo1")]
+
+[node name="BackgroundGridGuide" type="Sprite2D" parent="." unique_id=1433182701]
+position = Vector2(320, 180)
+texture = ExtResource("1_6uphi")
+
+[node name="MobSilhouette" type="Sprite2D" parent="." unique_id=512041316]
+position = Vector2(458, 114)
+texture = ExtResource("2_1bmo1")

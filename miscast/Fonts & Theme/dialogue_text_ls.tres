@@ -1,4 +1,4 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://3dloh0phalem"]
+[gd_resource type="LabelSettings" format=3 uid="uid://3dloh0phalem"]
 
 [ext_resource type="FontFile" uid="uid://nsmg205ckeui" path="res://Fonts & Theme/Everyday_Standard.ttf" id="1_5s6tk"]
 
