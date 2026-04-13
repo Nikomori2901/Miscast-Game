@@ -5,7 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://ctcissdj60us8" path="res://Magic Casting/Sprites/hover_frames.tres" id="3_5dpjx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xtw7t"]
-radius = 10.049875
+radius = 8.0
 
 [node name="Magic Node" type="Node2D" unique_id=1994814419 node_paths=PackedStringArray("magicNodeSprite", "hoverSprite")]
 script = ExtResource("1_p7am6")

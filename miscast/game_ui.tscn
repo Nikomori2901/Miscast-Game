@@ -1,0 +1,266 @@
+[gd_scene format=3 uid="uid://d2sbo652la5k4"]
+
+[ext_resource type="Script" uid="uid://bok0twcxf264p" path="res://Global/PauseMenu.cs" id="1_3rlp6"]
+[ext_resource type="Texture2D" uid="uid://b8llip2h17s05" path="res://Game UI.png" id="1_obik5"]
+[ext_resource type="Script" uid="uid://1utpr7066kr3" path="res://Global/SettingsScreen.cs" id="2_obik5"]
+[ext_resource type="Theme" uid="uid://b30ludto1lkkc" path="res://Fonts & Theme/default_theme.tres" id="3_xlnb1"]
+[ext_resource type="Texture2D" uid="uid://bupa7bhpk81b" path="res://Character Portrait Placeholder.png" id="4_obik5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uu0lx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahukf"]
+
+[node name="Game UI" type="Control" unique_id=2027637410]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1942026845]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("1_obik5")
+
+[node name="Pause Menu" type="Panel" parent="." unique_id=1741404917 node_paths=PackedStringArray("settingsScreen")]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+script = ExtResource("1_3rlp6")
+settingsScreen = NodePath("Settings Screen")
+
+[node name="Settings Screen" type="Control" parent="Pause Menu" unique_id=266697408 node_paths=PackedStringArray("windowModeButton", "resolutionButton", "masterVolumeSlider", "masterVolumeLabel", "musicVolumeSlider", "musicVolumeLabel", "sfxVolumeSlider", "sfxVolumeLabel")]
+z_index = 20
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+script = ExtResource("2_obik5")
+windowModeButton = NodePath("Setting Controls/Box 1/Box 2/Column 2/Window Mode")
+resolutionButton = NodePath("Setting Controls/Box 1/Box 2/Column 3/Resolution")
+masterVolumeSlider = NodePath("Setting Controls/Box 1/Box 2/Column 2/Master Slider")
+masterVolumeLabel = NodePath("Setting Controls/Box 1/Box 2/Column 3/Master Volume Number")
+musicVolumeSlider = NodePath("Setting Controls/Box 1/Box 2/Column 2/Music Slider")
+musicVolumeLabel = NodePath("Setting Controls/Box 1/Box 2/Column 3/Music Volume Number")
+sfxVolumeSlider = NodePath("Setting Controls/Box 1/Box 2/Column 2/SFX Slider")
+sfxVolumeLabel = NodePath("Setting Controls/Box 1/Box 2/Column 3/SFX Volume Number")
+
+[node name="Settings Title Text" type="TextureRect" parent="Pause Menu/Settings Screen" unique_id=436286432]
+z_index = 20
+material = SubResource("ShaderMaterial_uu0lx")
+layout_mode = 0
+offset_left = 232.0
+offset_top = 22.0
+offset_right = 404.0
+offset_bottom = 63.0
+stretch_mode = 3
+
+[node name="Setting Controls" type="Control" parent="Pause Menu/Settings Screen" unique_id=1063466714]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Box 1" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls" unique_id=1335684596]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+alignment = 1
+
+[node name="Box 2" type="HBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1" unique_id=139756459]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Column 1" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2" unique_id=1280304941]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Resolution Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=1819571402]
+material = SubResource("ShaderMaterial_ahukf")
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Master Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=2020338546]
+z_index = 20
+material = SubResource("ShaderMaterial_uu0lx")
+custom_minimum_size = Vector2(0, 32)
+layout_direction = 2
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Music Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=1800683960]
+z_index = 20
+material = SubResource("ShaderMaterial_uu0lx")
+custom_minimum_size = Vector2(0, 32)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 5
+stretch_mode = 3
+
+[node name="SFX Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=1988311963]
+z_index = 20
+material = SubResource("ShaderMaterial_uu0lx")
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 5
+stretch_mode = 3
+
+[node name="Column 2" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2" unique_id=1700293211]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Window Mode" type="OptionButton" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=1224186908]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Exclusive Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+
+[node name="Master Slider" type="HSlider" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=281447385]
+z_index = 20
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+step = 5.0
+value = 100.0
+rounded = true
+tick_count = 20
+ticks_on_borders = true
+
+[node name="Music Slider" type="HSlider" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=167021096]
+z_index = 20
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+step = 5.0
+value = 100.0
+rounded = true
+tick_count = 20
+ticks_on_borders = true
+
+[node name="SFX Slider" type="HSlider" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=78464858]
+z_index = 20
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+step = 5.0
+value = 100.0
+rounded = true
+tick_count = 20
+ticks_on_borders = true
+
+[node name="Column 3" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2" unique_id=1515628223]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Resolution" type="OptionButton" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=1475951368]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+disabled = true
+selected = 2
+item_count = 3
+popup/item_0/text = "640 x 360"
+popup/item_0/id = 0
+popup/item_1/text = "1280 x 720"
+popup/item_1/id = 1
+popup/item_2/text = "1920 x 1080"
+popup/item_2/id = 2
+
+[node name="Master Volume Number" type="Label" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=476317372]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music Volume Number" type="Label" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=2140312198]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX Volume Number" type="Label" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=1156056903]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Return Button" type="TextureButton" parent="Pause Menu/Settings Screen" unique_id=1228461090]
+z_index = 20
+material = SubResource("ShaderMaterial_uu0lx")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 84.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+stretch_mode = 3
+
+[node name="DialogueBox" type="TextureRect" parent="." unique_id=1183018678]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 200.0
+offset_right = 610.0
+offset_bottom = 340.0
+
+[node name="Dialogue Box" type="HBoxContainer" parent="DialogueBox" unique_id=2062805221]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 572.0
+offset_bottom = 132.0
+
+[node name="Character Portrait" type="TextureRect" parent="DialogueBox/Dialogue Box" unique_id=809106125]
+layout_mode = 2
+texture = ExtResource("4_obik5")
+
+[node name="Padding" type="Control" parent="DialogueBox/Dialogue Box" unique_id=2092111672]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="Dialogue Text" type="RichTextLabel" parent="DialogueBox/Dialogue Box" unique_id=394751003]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_xlnb1")
+text = "Dialogue Text"
+
+[connection signal="item_selected" from="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/Window Mode" to="Pause Menu/Settings Screen" method="WindowModeChanged"]
+[connection signal="value_changed" from="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/Master Slider" to="Pause Menu/Settings Screen" method="MasterVolumeChanged"]
+[connection signal="value_changed" from="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/Music Slider" to="Pause Menu/Settings Screen" method="MusicVolumeChanged"]
+[connection signal="value_changed" from="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/SFX Slider" to="Pause Menu/Settings Screen" method="SFXVolumeChanged"]
+[connection signal="item_selected" from="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3/Resolution" to="Pause Menu/Settings Screen" method="ResolutionChanged"]
