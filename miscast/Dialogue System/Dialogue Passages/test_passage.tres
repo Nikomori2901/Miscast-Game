@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialoguePassage" format=3 uid="uid://bq7f0exdr07jv"]
+
+[ext_resource type="Texture2D" uid="uid://ws6utj5v4tmm" path="res://Mob Silhouette.png" id="1_6yaf0"]
+[ext_resource type="Script" uid="uid://muauvv4uh74s" path="res://Dialogue System/DialoguePassage.cs" id="2_qyths"]
+[ext_resource type="Resource" uid="uid://batuxdk0343io" path="res://Dialogue System/Dialogue Passages/test_passage2.tres" id="2_sxaot"]
+
+[resource]
+script = ExtResource("2_qyths")
+characterName = "MC"
+characterPortrait = ExtResource("1_6yaf0")
+dialogueText = "Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah"
+nextPassage = ExtResource("2_sxaot")
+metadata/_custom_type_script = "uid://muauvv4uh74s"
