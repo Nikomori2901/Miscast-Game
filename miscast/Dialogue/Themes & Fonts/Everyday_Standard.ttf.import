@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://nsmg205ckeui"
-path="res://.godot/imported/Everyday_Standard.ttf-c07d84f4718c93ab0ee3513cab6fdf40.fontdata"
+path="res://.godot/imported/Everyday_Standard.ttf-03a8436ff5a6ba6d96d6040cc72241ad.fontdata"
 
 [deps]
 
-source_file="res://Fonts & Theme/Everyday_Standard.ttf"
-dest_files=["res://.godot/imported/Everyday_Standard.ttf-c07d84f4718c93ab0ee3513cab6fdf40.fontdata"]
+source_file="res://Dialogue/Themes & Fonts/Everyday_Standard.ttf"
+dest_files=["res://.godot/imported/Everyday_Standard.ttf-03a8436ff5a6ba6d96d6040cc72241ad.fontdata"]
 
 [params]
 
@@ -21,6 +21,7 @@ msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
+modulate_color_glyphs=false
 hinting=1
 subpixel_positioning=1
 keep_rounding_remainders=true

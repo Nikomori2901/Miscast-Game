@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgqraykmk18k7"
-path="res://.godot/imported/Dialogue Box.png-1d8049097063c43e140d7bd93f779064.ctex"
+uid="uid://djxbnna5p50xs"
+path="res://.godot/imported/Door Hover.png-ac411d9beaf90893f8d7fa92c7e4c35f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogue Box.png"
-dest_files=["res://.godot/imported/Dialogue Box.png-1d8049097063c43e140d7bd93f779064.ctex"]
+source_file="res://Door Hover.png"
+dest_files=["res://.godot/imported/Door Hover.png-ac411d9beaf90893f8d7fa92c7e4c35f.ctex"]
 
 [params]
 

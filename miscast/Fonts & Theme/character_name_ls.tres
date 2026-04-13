@@ -1,7 +1,0 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bwf3dcbg34e8n"]
-
-[ext_resource type="FontFile" uid="uid://nsmg205ckeui" path="res://Fonts & Theme/Everyday_Standard.ttf" id="1_3virn"]
-
-[resource]
-font = ExtResource("1_3virn")
-font_size = 14

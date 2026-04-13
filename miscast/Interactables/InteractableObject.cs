@@ -2,14 +2,14 @@ using Godot;
 using System;
 using Miscast;
 
-public partial class InteractableObject : Container, IDebuggable
+public partial class InteractableObject : Node2D, IDebuggable
 {
     #region Variables
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
 
-    [Export] private Control hoverLabel;
-    [Export] private Control tempDialogueBox;
+    [Export] private Sprite2D sprite;
+    [Export] private AnimatedSprite2D hoverSprite;
 
     // --- Variables ---
 
@@ -24,42 +24,51 @@ public partial class InteractableObject : Container, IDebuggable
     public override void _Ready()
     {
         DebugManager.DebugPrint(this, "InteractableObject Ready");
-        tempDialogueBox.Visible = false;
+        HideHoverSprite();
     }
 
     #endregion
 
     #region Methods
 
-    public void OnInput(InputEvent inputEvent)
+    public void Hovered()
     {
-        if (inputEvent is InputEventMouseButton inputEventMouseButton)
+        DebugManager.DebugPrint(this, "Hovered");
+        ShowHoverSprite();
+    }
+
+    public void UnHovered()
+    {
+        DebugManager.DebugPrint(this, "UnHovered");
+        HideHoverSprite();
+    }
+
+    public void OnAreaInputEvent(Node viewport, InputEvent inputEvent, long shapeIndex)
+    {
+        if (inputEvent is InputEventMouseButton mouseButton)
         {
-            if (inputEventMouseButton.GetButtonIndex() == MouseButton.Left && inputEventMouseButton.Pressed)
+            if (mouseButton.ButtonIndex == MouseButton.Left && mouseButton.Pressed)
             {
                 OnLeftClick();
             }
         }
     }
 
-    public void OnLeftClick()
+    private void OnLeftClick()
     {
         DebugManager.DebugPrint(this, "OnLeftClick");
-        tempDialogueBox.Visible = !tempDialogueBox.Visible;
     }
 
-    private void OnMouseEnter()
+    private void ShowHoverSprite()
     {
-        DebugManager.DebugPrint(this, "OnMouseEnter");
-        hoverLabel.Show();
-        Modulate = new Color(1.2f, 1.2f, 1.2f);
+        hoverSprite.Visible = true;
+        hoverSprite.Play();
     }
 
-    private void OnMouseExit()
+    private void HideHoverSprite()
     {
-        DebugManager.DebugPrint(this, "OnMouseExit");
-        hoverLabel.Hide();
-        Modulate = new Color(1, 1, 1);
+        hoverSprite.Visible = false;
+        hoverSprite.Stop();
     }
 
     #endregion

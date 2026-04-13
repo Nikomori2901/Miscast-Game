@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c1lvws3nvykis"]
+
+[ext_resource type="Script" uid="uid://bh2fqauggiafu" path="res://Interactables/InteractableObject.cs" id="1_x2h51"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2h51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fgak"]
+size = Vector2(100, 160)
+
+[node name="Interactable Object" type="Node2D" unique_id=216219292 node_paths=PackedStringArray("sprite", "hoverSprite")]
+script = ExtResource("1_x2h51")
+debugEnabled = true
+sprite = NodePath("Sprite")
+hoverSprite = NodePath("Hover Sprite")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1734528953]
+
+[node name="Hover Sprite" type="AnimatedSprite2D" parent="." unique_id=851245358]
+sprite_frames = SubResource("SpriteFrames_x2h51")
+
+[node name="Area" type="Area2D" parent="." unique_id=1097383461]
+
+[node name="Collision Shape" type="CollisionShape2D" parent="Area" unique_id=1827256794]
+shape = SubResource("RectangleShape2D_8fgak")
+
+[connection signal="input_event" from="Area" to="." method="OnAreaInputEvent"]
+[connection signal="mouse_entered" from="Area" to="." method="Hovered"]
+[connection signal="mouse_exited" from="Area" to="." method="UnHovered"]

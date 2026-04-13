@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dupehk4ldirjm"
-path="res://.godot/imported/Name Plate.png-aa83407c1ac592abe8f119ca216f727e.ctex"
+uid="uid://d0n0dr7u0yy1x"
+path="res://.godot/imported/Character Portrait Area.png-66f07173dd45ee6226bbf16127acd288.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Name Plate.png"
-dest_files=["res://.godot/imported/Name Plate.png-aa83407c1ac592abe8f119ca216f727e.ctex"]
+source_file="res://Dialogue/Sprites/Character Portrait Area.png"
+dest_files=["res://.godot/imported/Character Portrait Area.png-66f07173dd45ee6226bbf16127acd288.ctex"]
 
 [params]
 

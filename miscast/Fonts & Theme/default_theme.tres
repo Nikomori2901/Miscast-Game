@@ -1,7 +1,0 @@
-[gd_resource type="Theme" format=3 uid="uid://b30ludto1lkkc"]
-
-[ext_resource type="FontFile" uid="uid://nsmg205ckeui" path="res://Fonts & Theme/Everyday_Standard.ttf" id="1_j5o6w"]
-
-[resource]
-default_font = ExtResource("1_j5o6w")
-default_font_size = 14

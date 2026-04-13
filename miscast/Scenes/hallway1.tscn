@@ -1,10 +1,95 @@
 [gd_scene format=3 uid="uid://bq3cg48a548b7"]
 
-[ext_resource type="PackedScene" uid="uid://d2sbo652la5k4" path="res://game_ui.tscn" id="1_1bmo1"]
+[ext_resource type="PackedScene" uid="uid://d2sbo652la5k4" path="res://Scenes/game_ui.tscn" id="1_1bmo1"]
 [ext_resource type="Texture2D" uid="uid://p44obbvvkknd" path="res://Area Background.png" id="1_a4h6d"]
 [ext_resource type="Texture2D" uid="uid://ws6utj5v4tmm" path="res://Mob Silhouette.png" id="2_1bmo1"]
+[ext_resource type="PackedScene" uid="uid://c1lvws3nvykis" path="res://Interactables/interactable_object.tscn" id="4_a4h6d"]
+[ext_resource type="Texture2D" uid="uid://ctsa6glwxgu7o" path="res://Interactables/Door.png" id="4_ubhsk"]
+[ext_resource type="Texture2D" uid="uid://dhydbr3otaaug" path="res://Interactables/Door Hover.png" id="5_0y7e3"]
 
-[node name="Node2D" type="Node2D" unique_id=887831976]
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0qim"]
+atlas = ExtResource("5_0y7e3")
+region = Rect2(0, 0, 120, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3cvr"]
+atlas = ExtResource("5_0y7e3")
+region = Rect2(120, 0, 120, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr22i"]
+atlas = ExtResource("5_0y7e3")
+region = Rect2(240, 0, 120, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xnlb"]
+atlas = ExtResource("5_0y7e3")
+region = Rect2(360, 0, 120, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg11a"]
+atlas = ExtResource("5_0y7e3")
+region = Rect2(0, 180, 120, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2okak"]
+atlas = ExtResource("5_0y7e3")
+region = Rect2(120, 180, 120, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e85h"]
+atlas = ExtResource("5_0y7e3")
+region = Rect2(240, 180, 120, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwrdd"]
+atlas = ExtResource("5_0y7e3")
+region = Rect2(360, 180, 120, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubhsk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0qim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3cvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr22i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xnlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg11a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2okak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e85h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwrdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e85h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2okak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg11a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xnlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr22i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3cvr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Hallway 1" type="Node2D" unique_id=887831976]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=698375842]
 texture = ExtResource("1_a4h6d")
@@ -14,4 +99,16 @@ centered = false
 position = Vector2(458, 114)
 texture = ExtResource("2_1bmo1")
 
+[node name="Interactable Object" parent="." unique_id=216219292 instance=ExtResource("4_a4h6d")]
+position = Vector2(192, 98)
+
+[node name="Sprite" parent="Interactable Object" index="0" unique_id=1734528953]
+texture = ExtResource("4_ubhsk")
+
+[node name="Hover Sprite" parent="Interactable Object" index="1" unique_id=851245358]
+sprite_frames = SubResource("SpriteFrames_ubhsk")
+frame_progress = 0.20442763
+
 [node name="Game UI" parent="." unique_id=2027637410 instance=ExtResource("1_1bmo1")]
+
+[editable path="Interactable Object"]

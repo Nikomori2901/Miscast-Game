@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bupa7bhpk81b"
-path="res://.godot/imported/Character Portrait Placeholder.png-7e8d18a26d4f32c786015787cc6f9726.ctex"
+uid="uid://ctsa6glwxgu7o"
+path="res://.godot/imported/Door.png-c73f69cc64df21bc7d84cb4df568b588.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character Portrait Placeholder.png"
-dest_files=["res://.godot/imported/Character Portrait Placeholder.png-7e8d18a26d4f32c786015787cc6f9726.ctex"]
+source_file="res://Interactables/Door.png"
+dest_files=["res://.godot/imported/Door.png-c73f69cc64df21bc7d84cb4df568b588.ctex"]
 
 [params]
 

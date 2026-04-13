@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0n0dr7u0yy1x"
-path="res://.godot/imported/Character Portrait Area.png-22cadf6ee614415b633b936251b9c56d.ctex"
+uid="uid://dgqraykmk18k7"
+path="res://.godot/imported/Dialogue Box.png-ed4b6d3dd5ffd146b56e05ef5945a367.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character Portrait Area.png"
-dest_files=["res://.godot/imported/Character Portrait Area.png-22cadf6ee614415b633b936251b9c56d.ctex"]
+source_file="res://Dialogue/Sprites/Dialogue Box.png"
+dest_files=["res://.godot/imported/Dialogue Box.png-ed4b6d3dd5ffd146b56e05ef5945a367.ctex"]
 
 [params]
 

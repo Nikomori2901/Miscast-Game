@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bok0twcxf264p" path="res://Global/PauseMenu.cs" id="1_3rlp6"]
 [ext_resource type="Texture2D" uid="uid://b8llip2h17s05" path="res://Game UI.png" id="1_obik5"]
 [ext_resource type="Script" uid="uid://1utpr7066kr3" path="res://Global/SettingsScreen.cs" id="2_obik5"]
-[ext_resource type="Theme" uid="uid://b30ludto1lkkc" path="res://Fonts & Theme/default_theme.tres" id="3_xlnb1"]
-[ext_resource type="Texture2D" uid="uid://dgqraykmk18k7" path="res://Dialogue Box.png" id="4_vealc"]
-[ext_resource type="Script" uid="uid://bwmcbissnm25p" path="res://Dialogue System/DialogueBox.cs" id="5_d6n2q"]
-[ext_resource type="Texture2D" uid="uid://d0n0dr7u0yy1x" path="res://Character Portrait Area.png" id="5_ltg2s"]
-[ext_resource type="FontFile" uid="uid://nsmg205ckeui" path="res://Fonts & Theme/Everyday_Standard.ttf" id="5_xlnb1"]
-[ext_resource type="Resource" uid="uid://bq7f0exdr07jv" path="res://Dialogue System/Dialogue Passages/test_passage.tres" id="6_5wnrh"]
-[ext_resource type="Texture2D" uid="uid://dupehk4ldirjm" path="res://Name Plate.png" id="6_ltg2s"]
+[ext_resource type="Theme" uid="uid://b30ludto1lkkc" path="res://Dialogue/Themes & Fonts/default_theme.tres" id="3_xlnb1"]
+[ext_resource type="Texture2D" uid="uid://dgqraykmk18k7" path="res://Dialogue/Sprites/Dialogue Box.png" id="4_vealc"]
+[ext_resource type="Script" uid="uid://bwmcbissnm25p" path="res://Dialogue/DialogueBox.cs" id="5_d6n2q"]
+[ext_resource type="Texture2D" uid="uid://d0n0dr7u0yy1x" path="res://Dialogue/Sprites/Character Portrait Area.png" id="5_ltg2s"]
+[ext_resource type="FontFile" uid="uid://nsmg205ckeui" path="res://Dialogue/Themes & Fonts/Everyday_Standard.ttf" id="5_xlnb1"]
+[ext_resource type="Resource" uid="uid://bq7f0exdr07jv" path="res://Dialogue/Passages/test_passage.tres" id="6_5wnrh"]
+[ext_resource type="Texture2D" uid="uid://dupehk4ldirjm" path="res://Dialogue/Sprites/Name Plate.png" id="6_ltg2s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uu0lx"]
 
@@ -24,6 +24,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
+mouse_filter = 2
 
 [node name="Placeholder Layout" type="TextureRect" parent="." unique_id=1942026845]
 visible = false
