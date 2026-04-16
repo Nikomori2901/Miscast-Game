@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bq3cg48a548b7"]
 
 [ext_resource type="PackedScene" uid="uid://d2sbo652la5k4" path="res://Scenes/game_ui.tscn" id="1_1bmo1"]
-[ext_resource type="Texture2D" uid="uid://bke7mm6pb1rhn" path="res://Screen Grid.png" id="1_sr22i"]
 [ext_resource type="Texture2D" uid="uid://ws6utj5v4tmm" path="res://Interactables/Mob Silhouette.png" id="2_1bmo1"]
 [ext_resource type="Texture2D" uid="uid://bmh3y8waihrbh" path="res://Wall.png" id="2_8xnlb"]
 [ext_resource type="PackedScene" uid="uid://c1lvws3nvykis" path="res://Interactables/interactable_object.tscn" id="4_a4h6d"]
@@ -192,10 +191,6 @@ point_count = 2
 
 [node name="Hallway 1" type="Node2D" unique_id=887831976]
 
-[node name="Background" type="Sprite2D" parent="." unique_id=698375842]
-texture = ExtResource("1_sr22i")
-centered = false
-
 [node name="Wall" type="Sprite2D" parent="." unique_id=1272072245]
 position = Vector2(0, 16)
 texture = ExtResource("2_8xnlb")
@@ -238,16 +233,11 @@ position = Vector2(-32, 208)
 texture = ExtResource("7_8xnlb")
 centered = false
 
-[node name="Game UI" parent="." unique_id=2027637410 instance=ExtResource("1_1bmo1")]
-visible = false
-offset_top = 16.0
-offset_bottom = 376.0
-
 [node name="MobSilhouette" type="Sprite2D" parent="." unique_id=512041316]
 position = Vector2(128, 160)
 texture = ExtResource("2_1bmo1")
 
-[node name="Floor2" type="Sprite2D" parent="." unique_id=849612189]
+[node name="Ceiling" type="Sprite2D" parent="." unique_id=849612189]
 position = Vector2(-32, 0)
 texture = ExtResource("7_8xnlb")
 centered = false
@@ -309,6 +299,8 @@ wipeCurve = SubResource("Curve_53typ")
 wipeInTexture = ExtResource("14_53typ")
 wipeOutTexture = ExtResource("14_53typ")
 snapToPixel = true
+
+[node name="Game UI" parent="." unique_id=631023475 instance=ExtResource("1_1bmo1")]
 
 [editable path="Door"]
 [editable path="Arrow"]

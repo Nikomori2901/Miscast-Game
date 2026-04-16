@@ -106,8 +106,20 @@ public partial class DialogueBox : Control, IDebuggable
     private void DisplayCurrentPassage()
     {
         dialogueLabel.Text = currentPassage.dialogueText;
-        characterNameLabel.Text = currentPassage.characterName;
-        characterPortrait.Texture = currentPassage.characterPortrait;
+
+        if (characterNameLabel != null)
+        {
+            bool hasName = !string.IsNullOrEmpty(currentPassage.characterName);
+            characterNameLabel.Visible = hasName;
+            characterNameLabel.Text = hasName ? currentPassage.characterName : "";
+        }
+
+        if (characterPortrait != null)
+        {
+            bool hasPortrait = currentPassage.characterPortrait != null;
+            characterPortrait.Visible = hasPortrait;
+            characterPortrait.Texture = currentPassage.characterPortrait;
+        }
 
         scrollProgress = 0;
         dialogueLabel.VisibleCharacters = 0;

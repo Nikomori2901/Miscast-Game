@@ -9,9 +9,9 @@
 [ext_resource type="FontFile" uid="uid://nsmg205ckeui" path="res://Dialogue/Themes & Fonts/Everyday_Standard.ttf" id="5_xlnb1"]
 [ext_resource type="Resource" uid="uid://bq7f0exdr07jv" path="res://Dialogue/Passages/test_passage.tres" id="6_5wnrh"]
 [ext_resource type="Texture2D" uid="uid://des1gunn3ajif" path="res://Game Background.png" id="8_cjtla"]
+[ext_resource type="Texture2D" uid="uid://mkf0bokk76df" path="res://Portrait Box Simple.png" id="9_btved"]
 [ext_resource type="Script" uid="uid://16nps3nudb8q" path="res://Interactables/Tooltip.cs" id="11_dvsk4"]
 [ext_resource type="Texture2D" uid="uid://bohq8ssjfsyyy" path="res://Interactables/Tooltip Window.png" id="12_74ohg"]
-[ext_resource type="Texture2D" uid="uid://bv3d2buk1tgaj" path="res://Dialogue Box.png" id="14_vmear"]
 [ext_resource type="FontFile" uid="uid://1rlw4s53dxon" path="res://Dialogue/Themes & Fonts/Everyday_Vast_Original.ttf" id="15_vmear"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uu0lx"]
@@ -29,34 +29,38 @@ texture_margin_bottom = 3.0
 font = ExtResource("5_xlnb1")
 font_size = 7
 
-[sub_resource type="LabelSettings" id="LabelSettings_vealc"]
-line_spacing = 4.0
-font = ExtResource("15_vmear")
-font_size = 13
-font_color = Color(0, 0, 0, 1)
-
-[node name="Game UI" type="Control" unique_id=2027637410]
+[node name="Game UI" type="Control" unique_id=631023475]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 16.0
 offset_right = 640.0
-offset_bottom = 360.0
+offset_bottom = 376.0
 mouse_filter = 2
 
-[node name="Screen Grid" type="TextureRect" parent="." unique_id=965925948]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=12279275]
+z_index = -10
+layout_mode = 1
+offset_top = -16.0
+offset_right = 640.0
+offset_bottom = 344.0
+texture = ExtResource("8_cjtla")
+stretch_mode = 2
+
+[node name="Screen Grid" type="TextureRect" parent="." unique_id=583289605]
 visible = false
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("1_btved")
 
-[node name="Placeholder Layout" type="TextureRect" parent="." unique_id=1942026845]
+[node name="Placeholder Layout" type="TextureRect" parent="." unique_id=1577994895]
 visible = false
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("1_obik5")
 
-[node name="Pause Menu" type="Panel" parent="." unique_id=1741404917 node_paths=PackedStringArray("settingsScreen")]
+[node name="Pause Menu" type="Panel" parent="." unique_id=153588031 node_paths=PackedStringArray("settingsScreen")]
 process_mode = 3
 visible = false
 layout_mode = 0
@@ -65,7 +69,7 @@ offset_bottom = 360.0
 script = ExtResource("1_3rlp6")
 settingsScreen = NodePath("Settings Screen")
 
-[node name="Settings Screen" type="Control" parent="Pause Menu" unique_id=266697408 node_paths=PackedStringArray("windowModeButton", "resolutionButton", "masterVolumeSlider", "masterVolumeLabel", "musicVolumeSlider", "musicVolumeLabel", "sfxVolumeSlider", "sfxVolumeLabel")]
+[node name="Settings Screen" type="Control" parent="Pause Menu" unique_id=140813883 node_paths=PackedStringArray("windowModeButton", "resolutionButton", "masterVolumeSlider", "masterVolumeLabel", "musicVolumeSlider", "musicVolumeLabel", "sfxVolumeSlider", "sfxVolumeLabel")]
 z_index = 20
 anchors_preset = 0
 offset_right = 640.0
@@ -80,7 +84,7 @@ musicVolumeLabel = NodePath("Setting Controls/Box 1/Box 2/Column 3/Music Volume 
 sfxVolumeSlider = NodePath("Setting Controls/Box 1/Box 2/Column 2/SFX Slider")
 sfxVolumeLabel = NodePath("Setting Controls/Box 1/Box 2/Column 3/SFX Volume Number")
 
-[node name="Settings Title Text" type="TextureRect" parent="Pause Menu/Settings Screen" unique_id=436286432]
+[node name="Settings Title Text" type="TextureRect" parent="Pause Menu/Settings Screen" unique_id=157722219]
 z_index = 20
 material = SubResource("ShaderMaterial_uu0lx")
 layout_mode = 0
@@ -90,7 +94,7 @@ offset_right = 404.0
 offset_bottom = 63.0
 stretch_mode = 3
 
-[node name="Setting Controls" type="Control" parent="Pause Menu/Settings Screen" unique_id=1063466714]
+[node name="Setting Controls" type="Control" parent="Pause Menu/Settings Screen" unique_id=338699258]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -104,29 +108,29 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Box 1" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls" unique_id=1335684596]
+[node name="Box 1" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls" unique_id=1634502897]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 alignment = 1
 
-[node name="Box 2" type="HBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1" unique_id=139756459]
+[node name="Box 2" type="HBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1" unique_id=2138839533]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Column 1" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2" unique_id=1280304941]
+[node name="Column 1" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2" unique_id=523136649]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Resolution Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=1819571402]
+[node name="Resolution Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=430353670]
 material = SubResource("ShaderMaterial_ahukf")
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 stretch_mode = 3
 
-[node name="Master Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=2020338546]
+[node name="Master Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=1242353626]
 z_index = 20
 material = SubResource("ShaderMaterial_uu0lx")
 custom_minimum_size = Vector2(0, 32)
@@ -134,7 +138,7 @@ layout_direction = 2
 layout_mode = 2
 stretch_mode = 3
 
-[node name="Music Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=1800683960]
+[node name="Music Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=358236927]
 z_index = 20
 material = SubResource("ShaderMaterial_uu0lx")
 custom_minimum_size = Vector2(0, 32)
@@ -143,7 +147,7 @@ layout_mode = 2
 size_flags_horizontal = 5
 stretch_mode = 3
 
-[node name="SFX Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=1988311963]
+[node name="SFX Text" type="TextureRect" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 1" unique_id=318450793]
 z_index = 20
 material = SubResource("ShaderMaterial_uu0lx")
 custom_minimum_size = Vector2(0, 32)
@@ -151,11 +155,11 @@ layout_mode = 2
 size_flags_horizontal = 5
 stretch_mode = 3
 
-[node name="Column 2" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2" unique_id=1700293211]
+[node name="Column 2" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2" unique_id=655082869]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Window Mode" type="OptionButton" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=1224186908]
+[node name="Window Mode" type="OptionButton" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=503520211]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 selected = 0
@@ -167,7 +171,7 @@ popup/item_1/id = 1
 popup/item_2/text = "Windowed"
 popup/item_2/id = 2
 
-[node name="Master Slider" type="HSlider" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=281447385]
+[node name="Master Slider" type="HSlider" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=493937153]
 z_index = 20
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -179,7 +183,7 @@ rounded = true
 tick_count = 20
 ticks_on_borders = true
 
-[node name="Music Slider" type="HSlider" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=167021096]
+[node name="Music Slider" type="HSlider" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=852531610]
 z_index = 20
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -191,7 +195,7 @@ rounded = true
 tick_count = 20
 ticks_on_borders = true
 
-[node name="SFX Slider" type="HSlider" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=78464858]
+[node name="SFX Slider" type="HSlider" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2" unique_id=313529820]
 z_index = 20
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -203,11 +207,11 @@ rounded = true
 tick_count = 20
 ticks_on_borders = true
 
-[node name="Column 3" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2" unique_id=1515628223]
+[node name="Column 3" type="VBoxContainer" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2" unique_id=678259064]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Resolution" type="OptionButton" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=1475951368]
+[node name="Resolution" type="OptionButton" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=526667295]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 disabled = true
@@ -220,7 +224,7 @@ popup/item_1/id = 1
 popup/item_2/text = "1920 x 1080"
 popup/item_2/id = 2
 
-[node name="Master Volume Number" type="Label" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=476317372]
+[node name="Master Volume Number" type="Label" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=1992775040]
 texture_filter = 1
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -229,7 +233,7 @@ text = "100%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Music Volume Number" type="Label" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=2140312198]
+[node name="Music Volume Number" type="Label" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=1914050866]
 texture_filter = 1
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -238,7 +242,7 @@ text = "100%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SFX Volume Number" type="Label" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=1156056903]
+[node name="SFX Volume Number" type="Label" parent="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 3" unique_id=149210957]
 texture_filter = 1
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -247,7 +251,7 @@ text = "100%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Return Button" type="TextureButton" parent="Pause Menu/Settings Screen" unique_id=1228461090]
+[node name="Return Button" type="TextureButton" parent="Pause Menu/Settings Screen" unique_id=1122949561]
 z_index = 20
 material = SubResource("ShaderMaterial_uu0lx")
 layout_mode = 1
@@ -264,14 +268,14 @@ grow_horizontal = 2
 grow_vertical = 0
 stretch_mode = 3
 
-[node name="Tooltip" type="Control" parent="." unique_id=480090020 node_paths=PackedStringArray("tooltipLabel")]
+[node name="Tooltip" type="Control" parent="." unique_id=1988381083 node_paths=PackedStringArray("tooltipLabel")]
 visible = false
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("11_dvsk4")
 tooltipLabel = NodePath("Background/Label")
 
-[node name="Background" type="PanelContainer" parent="Tooltip" unique_id=261824046]
+[node name="Background" type="PanelContainer" parent="Tooltip" unique_id=1564778861]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -286,7 +290,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dvsk4")
 
-[node name="Label" type="Label" parent="Tooltip/Background" unique_id=1725677435]
+[node name="Label" type="Label" parent="Tooltip/Background" unique_id=1174483346]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "test"
@@ -294,71 +298,41 @@ label_settings = SubResource("LabelSettings_dvsk4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1003356645]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -320.0
-offset_top = -168.0
-offset_right = 320.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("8_cjtla")
-
-[node name="Dialogue Box" type="TextureRect" parent="." unique_id=28753787 node_paths=PackedStringArray("characterPortrait", "characterNameLabel", "dialogueLabel")]
+[node name="Dialogue Box" type="TextureRect" parent="." unique_id=936491651 node_paths=PackedStringArray("dialogueLabel")]
 z_index = 1
-layout_mode = 0
-offset_left = -1.0
-offset_top = 199.0
-offset_right = 639.0
-offset_bottom = 353.0
-texture = ExtResource("14_vmear")
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.044000003
+anchor_bottom = -0.044000003
+offset_left = 96.0
+offset_top = 239.84
+offset_right = 544.0
+offset_bottom = 335.84
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("9_btved")
 stretch_mode = 3
 script = ExtResource("5_d6n2q")
-characterPortrait = NodePath("Character Portrait")
-characterNameLabel = NodePath("Name Label")
 dialogueLabel = NodePath("Dialogue Text")
 testPassage = ExtResource("6_5wnrh")
 
-[node name="Name Label" type="Label" parent="Dialogue Box" unique_id=1029068136]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -236.0
-offset_top = -122.0
-offset_right = -158.0
-offset_bottom = -108.0
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset_ratio = Vector2(1, 1)
-text = "Name"
-label_settings = SubResource("LabelSettings_vealc")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Character Portrait" type="TextureRect" parent="Dialogue Box" unique_id=1853895420]
+[node name="Character Portrait" type="TextureRect" parent="Dialogue Box" unique_id=814410209]
+visible = false
 z_index = -1
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
-offset_left = 64.0
-offset_top = -80.0
-offset_right = 192.0
-offset_bottom = 48.0
+offset_left = 68.0
+offset_top = -9.0
+offset_right = 196.0
+offset_bottom = 119.0
 stretch_mode = 3
 
-[node name="Dialogue Text" type="RichTextLabel" parent="Dialogue Box" unique_id=685983375]
+[node name="Dialogue Text" type="RichTextLabel" parent="Dialogue Box" unique_id=358941332]
 clip_contents = false
 layout_mode = 0
-offset_left = 79.0
-offset_top = 56.0
-offset_right = 561.0
-offset_bottom = 120.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 432.0
+offset_bottom = 80.0
 size_flags_horizontal = 3
 theme = ExtResource("3_xlnb1")
 theme_override_fonts/normal_font = ExtResource("15_vmear")
