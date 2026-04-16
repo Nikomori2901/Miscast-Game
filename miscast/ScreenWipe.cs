@@ -70,6 +70,7 @@ public partial class ScreenWipe : Sprite2D
 
         Vector2 endPosition = direction == WipeDirection.Right ? rightRestPosition : leftRestPosition;
         Texture = wipeOutTexture;
+        Visible = true;
         isAnimating = true;
         await AnimateWipe(centerPosition, endPosition);
         Visible = false;
@@ -84,14 +85,14 @@ public partial class ScreenWipe : Sprite2D
 
         while (progress < 1f)
         {
+            await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+
             progress += (float)GetProcessDeltaTime() / wipeDuration;
             if (progress > 1f) progress = 1f;
 
             float curveValue = wipeCurve?.Sample(progress) ?? progress;
             Position = from.Lerp(to, curveValue);
             if (snapToPixel) Position = Position.Round();
-
-            await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
     }
 

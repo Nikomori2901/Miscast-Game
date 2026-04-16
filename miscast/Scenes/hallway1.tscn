@@ -200,48 +200,6 @@ centered = false
 position = Vector2(320, 112)
 texture = ExtResource("11_gg11a")
 
-[node name="Door" parent="." unique_id=216219292 instance=ExtResource("4_a4h6d")]
-position = Vector2(512, 128)
-tooltipText = "Your Room"
-
-[node name="Sprite" parent="Door" index="0" unique_id=1734528953]
-texture = ExtResource("4_ubhsk")
-
-[node name="Hover Sprite" parent="Door" index="1" unique_id=851245358]
-sprite_frames = SubResource("SpriteFrames_ubhsk")
-frame_progress = 0.20442763
-
-[node name="Collision Shape" parent="Door/Area" parent_id_path=PackedInt32Array(216219292, 1097383461) index="0" unique_id=1827256794]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_gg11a")
-
-[node name="Arrow" parent="." unique_id=1317807225 instance=ExtResource("4_a4h6d")]
-position = Vector2(32, 96)
-
-[node name="Sprite" parent="Arrow" index="0" unique_id=1734528953]
-texture = ExtResource("7_k0qim")
-
-[node name="Hover Sprite" parent="Arrow" index="1" unique_id=851245358]
-sprite_frames = SubResource("SpriteFrames_y4nem")
-frame_progress = 0.065300345
-
-[node name="Collision Shape" parent="Arrow/Area" parent_id_path=PackedInt32Array(1317807225, 1097383461) index="0" unique_id=1827256794]
-shape = SubResource("RectangleShape2D_f3cvr")
-
-[node name="Floor" type="Sprite2D" parent="." unique_id=1447687716]
-position = Vector2(-32, 208)
-texture = ExtResource("7_8xnlb")
-centered = false
-
-[node name="MobSilhouette" type="Sprite2D" parent="." unique_id=512041316]
-position = Vector2(128, 160)
-texture = ExtResource("2_1bmo1")
-
-[node name="Ceiling" type="Sprite2D" parent="." unique_id=849612189]
-position = Vector2(-32, 0)
-texture = ExtResource("7_8xnlb")
-centered = false
-
 [node name="BtAreaChange" type="Sprite2D" parent="." unique_id=341773081]
 visible = false
 texture_repeat = 2
@@ -285,6 +243,48 @@ position = Vector2(8, 112)
 texture = ExtResource("13_8e85h")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 192)
+
+[node name="Door" parent="." unique_id=216219292 instance=ExtResource("4_a4h6d")]
+position = Vector2(512, 128)
+tooltipText = "Your Room"
+
+[node name="Sprite" parent="Door" index="0" unique_id=1734528953]
+texture = ExtResource("4_ubhsk")
+
+[node name="Hover Sprite" parent="Door" index="1" unique_id=851245358]
+sprite_frames = SubResource("SpriteFrames_ubhsk")
+frame_progress = 0.20442763
+
+[node name="Collision Shape" parent="Door/Area" parent_id_path=PackedInt32Array(216219292, 1097383461) index="0" unique_id=1827256794]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_gg11a")
+
+[node name="Arrow" parent="." unique_id=1317807225 instance=ExtResource("4_a4h6d")]
+position = Vector2(32, 96)
+
+[node name="Sprite" parent="Arrow" index="0" unique_id=1734528953]
+texture = ExtResource("7_k0qim")
+
+[node name="Hover Sprite" parent="Arrow" index="1" unique_id=851245358]
+sprite_frames = SubResource("SpriteFrames_y4nem")
+frame_progress = 0.065300345
+
+[node name="Collision Shape" parent="Arrow/Area" parent_id_path=PackedInt32Array(1317807225, 1097383461) index="0" unique_id=1827256794]
+shape = SubResource("RectangleShape2D_f3cvr")
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=1447687716]
+position = Vector2(-32, 208)
+texture = ExtResource("7_8xnlb")
+centered = false
+
+[node name="MobSilhouette" type="Sprite2D" parent="." unique_id=512041316]
+position = Vector2(128, 160)
+texture = ExtResource("2_1bmo1")
+
+[node name="Ceiling" type="Sprite2D" parent="." unique_id=849612189]
+position = Vector2(-32, 0)
+texture = ExtResource("7_8xnlb")
+centered = false
 
 [node name="Main Camera" type="Camera2D" parent="." unique_id=436454375]
 anchor_mode = 0
