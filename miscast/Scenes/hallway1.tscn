@@ -1,13 +1,20 @@
 [gd_scene format=3 uid="uid://bq3cg48a548b7"]
 
 [ext_resource type="PackedScene" uid="uid://d2sbo652la5k4" path="res://Scenes/game_ui.tscn" id="1_1bmo1"]
-[ext_resource type="Texture2D" uid="uid://p44obbvvkknd" path="res://Areas/Area Background.png" id="1_a4h6d"]
+[ext_resource type="Texture2D" uid="uid://bke7mm6pb1rhn" path="res://Screen Grid.png" id="1_sr22i"]
 [ext_resource type="Texture2D" uid="uid://ws6utj5v4tmm" path="res://Interactables/Mob Silhouette.png" id="2_1bmo1"]
+[ext_resource type="Texture2D" uid="uid://bmh3y8waihrbh" path="res://Wall.png" id="2_8xnlb"]
 [ext_resource type="PackedScene" uid="uid://c1lvws3nvykis" path="res://Interactables/interactable_object.tscn" id="4_a4h6d"]
 [ext_resource type="Texture2D" uid="uid://ctsa6glwxgu7o" path="res://Interactables/Door.png" id="4_ubhsk"]
 [ext_resource type="Texture2D" uid="uid://dhydbr3otaaug" path="res://Interactables/Door Hover.png" id="5_0y7e3"]
+[ext_resource type="Texture2D" uid="uid://kp1g4hxldynd" path="res://Floor.png" id="7_8xnlb"]
 [ext_resource type="Texture2D" uid="uid://dhlqta2ob368r" path="res://Interactables/Arrow.png" id="7_k0qim"]
 [ext_resource type="Texture2D" uid="uid://de28h7yqrtby3" path="res://Interactables/Arrow Hover.png" id="8_f3cvr"]
+[ext_resource type="Texture2D" uid="uid://d4c6lsq4k6tp5" path="res://Window.png" id="11_gg11a"]
+[ext_resource type="Texture2D" uid="uid://0gme8wmge0ct" path="res://BT_AreaChange.png" id="12_2okak"]
+[ext_resource type="Texture2D" uid="uid://bgnstvyvddbq8" path="res://BT_Default.png" id="13_8e85h"]
+[ext_resource type="Texture2D" uid="uid://dyo76ce1a1tps" path="res://Screen Wipe.png" id="14_53typ"]
+[ext_resource type="Script" uid="uid://dkq4k42rb1gwq" path="res://ScreenWipe.cs" id="15_lfnbm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0qim"]
 atlas = ExtResource("5_0y7e3")
@@ -91,8 +98,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sr22i"]
-size = Vector2(100, 160)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg11a"]
+size = Vector2(112, 168)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53typ"]
 atlas = ExtResource("8_f3cvr")
@@ -177,20 +184,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3cvr"]
-size = Vector2(64, 176)
+size = Vector2(64, 192)
+
+[sub_resource type="Curve" id="Curve_53typ"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
 
 [node name="Hallway 1" type="Node2D" unique_id=887831976]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=698375842]
-texture = ExtResource("1_a4h6d")
+texture = ExtResource("1_sr22i")
 centered = false
 
-[node name="MobSilhouette" type="Sprite2D" parent="." unique_id=512041316]
-position = Vector2(136, 128)
-texture = ExtResource("2_1bmo1")
+[node name="Wall" type="Sprite2D" parent="." unique_id=1272072245]
+position = Vector2(0, 16)
+texture = ExtResource("2_8xnlb")
+centered = false
+
+[node name="Window" type="Sprite2D" parent="." unique_id=511073261]
+position = Vector2(320, 112)
+texture = ExtResource("11_gg11a")
 
 [node name="Door" parent="." unique_id=216219292 instance=ExtResource("4_a4h6d")]
-position = Vector2(496, 98)
+position = Vector2(512, 128)
 tooltipText = "Your Room"
 
 [node name="Sprite" parent="Door" index="0" unique_id=1734528953]
@@ -201,10 +217,11 @@ sprite_frames = SubResource("SpriteFrames_ubhsk")
 frame_progress = 0.20442763
 
 [node name="Collision Shape" parent="Door/Area" parent_id_path=PackedInt32Array(216219292, 1097383461) index="0" unique_id=1827256794]
-shape = SubResource("RectangleShape2D_sr22i")
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_gg11a")
 
 [node name="Arrow" parent="." unique_id=1317807225 instance=ExtResource("4_a4h6d")]
-position = Vector2(32, 92)
+position = Vector2(32, 96)
 
 [node name="Sprite" parent="Arrow" index="0" unique_id=1734528953]
 texture = ExtResource("7_k0qim")
@@ -216,7 +233,82 @@ frame_progress = 0.065300345
 [node name="Collision Shape" parent="Arrow/Area" parent_id_path=PackedInt32Array(1317807225, 1097383461) index="0" unique_id=1827256794]
 shape = SubResource("RectangleShape2D_f3cvr")
 
+[node name="Floor" type="Sprite2D" parent="." unique_id=1447687716]
+position = Vector2(-32, 208)
+texture = ExtResource("7_8xnlb")
+centered = false
+
 [node name="Game UI" parent="." unique_id=2027637410 instance=ExtResource("1_1bmo1")]
+visible = false
+offset_top = 16.0
+offset_bottom = 376.0
+
+[node name="MobSilhouette" type="Sprite2D" parent="." unique_id=512041316]
+position = Vector2(128, 160)
+texture = ExtResource("2_1bmo1")
+
+[node name="Floor2" type="Sprite2D" parent="." unique_id=849612189]
+position = Vector2(-32, 0)
+texture = ExtResource("7_8xnlb")
+centered = false
+
+[node name="BtAreaChange" type="Sprite2D" parent="." unique_id=341773081]
+visible = false
+texture_repeat = 2
+position = Vector2(32, 112)
+texture = ExtResource("12_2okak")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 192)
+
+[node name="BtAreaChange2" type="Sprite2D" parent="." unique_id=2144469356]
+visible = false
+texture_repeat = 2
+position = Vector2(512, 124)
+texture = ExtResource("12_2okak")
+region_enabled = true
+region_rect = Rect2(0, 0, 112, 168)
+
+[node name="BtDefault" type="Sprite2D" parent="." unique_id=1561936261]
+texture_repeat = 2
+position = Vector2(392, 112)
+texture = ExtResource("13_8e85h")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 192)
+
+[node name="BtDefault2" type="Sprite2D" parent="." unique_id=920861306]
+texture_repeat = 2
+position = Vector2(248, 112)
+texture = ExtResource("13_8e85h")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 192)
+
+[node name="BtDefault3" type="Sprite2D" parent="." unique_id=586797903]
+texture_repeat = 2
+position = Vector2(632, 112)
+texture = ExtResource("13_8e85h")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 192)
+
+[node name="BtDefault4" type="Sprite2D" parent="." unique_id=465709376]
+texture_repeat = 2
+position = Vector2(8, 112)
+texture = ExtResource("13_8e85h")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 192)
+
+[node name="Main Camera" type="Camera2D" parent="." unique_id=436454375]
+anchor_mode = 0
+
+[node name="Screen Wipe" type="Sprite2D" parent="Main Camera" unique_id=8887458]
+position = Vector2(-664, 5.421011e-20)
+texture = ExtResource("14_53typ")
+centered = false
+script = ExtResource("15_lfnbm")
+wipeDuration = 1.0
+wipeCurve = SubResource("Curve_53typ")
+wipeInTexture = ExtResource("14_53typ")
+wipeOutTexture = ExtResource("14_53typ")
+snapToPixel = true
 
 [editable path="Door"]
 [editable path="Arrow"]

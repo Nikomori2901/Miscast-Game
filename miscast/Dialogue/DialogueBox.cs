@@ -8,8 +8,6 @@ public partial class DialogueBox : Control, IDebuggable
     // --- Export Variables ---
     [Export] public bool debugEnabled { get; set; } = false;
 
-    [Export] private HBoxContainer horizontalContainer;
-    [Export] private Control characterPortraitArea;
     [Export] private TextureRect characterPortrait;
     [Export] private Label characterNameLabel;
     [Export] private RichTextLabel dialogueLabel;
@@ -110,24 +108,10 @@ public partial class DialogueBox : Control, IDebuggable
         dialogueLabel.Text = currentPassage.dialogueText;
         characterNameLabel.Text = currentPassage.characterName;
         characterPortrait.Texture = currentPassage.characterPortrait;
-        ArrangePortraitSide(currentPassage.portraitSide);
 
         scrollProgress = 0;
         dialogueLabel.VisibleCharacters = 0;
         isScrolling = true;
-    }
-
-    private void ArrangePortraitSide(PortraitSide side)
-    {
-        if (side == PortraitSide.Left)
-        {
-            horizontalContainer.MoveChild(characterPortraitArea, 0);
-        }
-
-        else
-        {
-            horizontalContainer.MoveChild(characterPortraitArea, horizontalContainer.GetChildCount() - 1);
-        }
     }
 
     private void SkipScrolling()

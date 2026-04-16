@@ -19,26 +19,6 @@ public enum GridPosition
     BottomRight
 }
 
-public static class GridPositionHelper
-{
-    public static Vector2I ToVector(GridPosition position)
-    {
-        return position switch
-        {
-            GridPosition.TopLeft => new Vector2I(0, 0),
-            GridPosition.Top => new Vector2I(1, 0),
-            GridPosition.TopRight => new Vector2I(2, 0),
-            GridPosition.Left => new Vector2I(0, 1),
-            GridPosition.Center => new Vector2I(1, 1),
-            GridPosition.Right => new Vector2I(2, 1),
-            GridPosition.BottomLeft => new Vector2I(0, 2),
-            GridPosition.Bottom => new Vector2I(1, 2),
-            GridPosition.BottomRight => new Vector2I(2, 2),
-            _ => new Vector2I(1, 1)
-        };
-    }
-}
-
 public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 {
     #region Variables
@@ -62,16 +42,8 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 
     #endregion
 
-#region Inherited Methods
+    #region Inherited Methods
     // ----- Lifecycle Methods -----
-    public override void _EnterTree()
-    {
-        DebugManager.DebugPrint(this, "MagicCasting EnterTree");
-
-        // --- Global Subscribe Events ---
-        MagicNode.NodeActivatedEvent += NodeActivated;
-    }
-
     public override void _Ready()
     {
         DebugManager.DebugPrint(this, "MagicCasting Ready");
@@ -84,6 +56,7 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
             if (node is MagicNode magicNode)
             {
                 magicNodes.Add(magicNode);
+                magicNode.NodeActivated += NodeActivated;
             }
 
             if (node is NodeConnection nodeConnection)
@@ -101,8 +74,7 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 
         DebugManager.DebugPrint(this, $"Node Grid Length: {nodeGrid.Length}");
         DebugManager.DebugPrint(this, $"Connection Map Size: {connectionMap.Count}");
-
-        // --- Resolve Target Pattern ---
+        
         ResolveTargetPattern();
     }
 
@@ -110,8 +82,14 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
     {
         DebugManager.DebugPrint(this, "MagicCasting ExitTree");
 
-        // --- Unsubscribe Events ---
-        MagicNode.NodeActivatedEvent -= NodeActivated;
+        // --- Unsubscribe Signals ---
+        foreach (Node node in GetChildren())
+        {
+            if (node is MagicNode magicNode)
+            {
+                magicNode.NodeActivated -= NodeActivated;
+            }
+        }
     }
 
     // ----- Update Methods -----
@@ -286,8 +264,8 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
 
         foreach (GridConnection pair in targetPattern.connections)
         {
-            Vector2I fromPosition = GridPositionHelper.ToVector(pair.from);
-            Vector2I toPosition = GridPositionHelper.ToVector(pair.to);
+            Vector2I fromPosition = GridPosToVec(pair.from);
+            Vector2I toPosition = GridPosToVec(pair.to);
 
             if (connectionMap.TryGetValue((fromPosition, toPosition), out NodeConnection connection) && !targetConnections.Contains(connection))
             {
@@ -331,5 +309,31 @@ public partial class MagicCasting : Singleton<MagicCasting>, IDebuggable
         DebugManager.DebugPrint(this, "CastFail");
     }
 
+    public Vector2I GridPosToVec(GridPosition position)
+    {
+        switch (position)
+        {
+            case GridPosition.TopLeft:
+                return new Vector2I(0, 0);
+            case GridPosition.Top:
+                return new Vector2I(1, 0);
+            case GridPosition.TopRight:
+                return new Vector2I(2, 0);
+            case GridPosition.Left:
+                return new Vector2I(0, 1);
+            case GridPosition.Center:
+                return new Vector2I(1, 1);
+            case GridPosition.Right:
+                return new Vector2I(2, 1);
+            case GridPosition.BottomLeft:
+                return new Vector2I(0, 2);
+            case GridPosition.Bottom:
+                return new Vector2I(1, 2);
+            case GridPosition.BottomRight:
+                return new Vector2I(2, 2);
+            default:
+                return new Vector2I(1, 1);
+        }
+    }
     #endregion
 }

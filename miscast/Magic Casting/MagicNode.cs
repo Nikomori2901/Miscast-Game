@@ -17,10 +17,8 @@ public partial class MagicNode : Node2D, IDebuggable
 
     #endregion
 
-    #region Events
-    public static event Action<MagicNode> NodeActivatedEvent;
-
-    #endregion
+    // --- Signals ---
+    [Signal] public delegate void NodeActivatedEventHandler(MagicNode activatedNode);
 
     #region Inherited Methods
     // ----- Lifecycle Methods -----
@@ -57,7 +55,7 @@ public partial class MagicNode : Node2D, IDebuggable
     public void Activate()
     {
         active = true;
-        NodeActivatedEvent?.Invoke(this);
+        EmitSignal(SignalName.NodeActivated, this);
     }
 
     public void Deactivate()

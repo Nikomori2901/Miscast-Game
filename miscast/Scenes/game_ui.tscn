@@ -1,25 +1,22 @@
 [gd_scene format=3 uid="uid://d2sbo652la5k4"]
 
 [ext_resource type="Script" uid="uid://bok0twcxf264p" path="res://Global/PauseMenu.cs" id="1_3rlp6"]
+[ext_resource type="Texture2D" uid="uid://bke7mm6pb1rhn" path="res://Screen Grid.png" id="1_btved"]
 [ext_resource type="Texture2D" uid="uid://b8llip2h17s05" path="res://Areas/Game UI.png" id="1_obik5"]
 [ext_resource type="Script" uid="uid://1utpr7066kr3" path="res://Global/SettingsScreen.cs" id="2_obik5"]
 [ext_resource type="Theme" uid="uid://b30ludto1lkkc" path="res://Dialogue/Themes & Fonts/default_theme.tres" id="3_xlnb1"]
-[ext_resource type="Texture2D" uid="uid://dgqraykmk18k7" path="res://Dialogue/Sprites/Dialogue Box.png" id="4_vealc"]
 [ext_resource type="Script" uid="uid://bwmcbissnm25p" path="res://Dialogue/DialogueBox.cs" id="5_d6n2q"]
-[ext_resource type="Texture2D" uid="uid://d0n0dr7u0yy1x" path="res://Dialogue/Sprites/Character Portrait Area.png" id="5_ltg2s"]
 [ext_resource type="FontFile" uid="uid://nsmg205ckeui" path="res://Dialogue/Themes & Fonts/Everyday_Standard.ttf" id="5_xlnb1"]
 [ext_resource type="Resource" uid="uid://bq7f0exdr07jv" path="res://Dialogue/Passages/test_passage.tres" id="6_5wnrh"]
-[ext_resource type="Texture2D" uid="uid://dupehk4ldirjm" path="res://Dialogue/Sprites/Name Plate.png" id="6_ltg2s"]
+[ext_resource type="Texture2D" uid="uid://des1gunn3ajif" path="res://Game Background.png" id="8_cjtla"]
 [ext_resource type="Script" uid="uid://16nps3nudb8q" path="res://Interactables/Tooltip.cs" id="11_dvsk4"]
 [ext_resource type="Texture2D" uid="uid://bohq8ssjfsyyy" path="res://Interactables/Tooltip Window.png" id="12_74ohg"]
+[ext_resource type="Texture2D" uid="uid://bv3d2buk1tgaj" path="res://Dialogue Box.png" id="14_vmear"]
+[ext_resource type="FontFile" uid="uid://1rlw4s53dxon" path="res://Dialogue/Themes & Fonts/Everyday_Vast_Original.ttf" id="15_vmear"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uu0lx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ahukf"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_vealc"]
-font = ExtResource("5_xlnb1")
-font_size = 14
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvsk4"]
 texture = ExtResource("12_74ohg")
@@ -32,12 +29,25 @@ texture_margin_bottom = 3.0
 font = ExtResource("5_xlnb1")
 font_size = 7
 
+[sub_resource type="LabelSettings" id="LabelSettings_vealc"]
+line_spacing = 4.0
+font = ExtResource("15_vmear")
+font_size = 13
+font_color = Color(0, 0, 0, 1)
+
 [node name="Game UI" type="Control" unique_id=2027637410]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
+
+[node name="Screen Grid" type="TextureRect" parent="." unique_id=965925948]
+visible = false
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("1_btved")
 
 [node name="Placeholder Layout" type="TextureRect" parent="." unique_id=1942026845]
 visible = false
@@ -254,89 +264,6 @@ grow_horizontal = 2
 grow_vertical = 0
 stretch_mode = 3
 
-[node name="DialogueBox" type="TextureRect" parent="." unique_id=1183018678 node_paths=PackedStringArray("horizontalContainer", "characterPortraitArea", "characterPortrait", "characterNameLabel", "dialogueLabel")]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 200.0
-offset_right = 610.0
-offset_bottom = 340.0
-texture = ExtResource("4_vealc")
-stretch_mode = 2
-script = ExtResource("5_d6n2q")
-debugEnabled = true
-horizontalContainer = NodePath("Horizontal Container")
-characterPortraitArea = NodePath("Horizontal Container/Character Portrait Area")
-characterPortrait = NodePath("Horizontal Container/Character Portrait Area/Character Portrait")
-characterNameLabel = NodePath("Horizontal Container/Character Portrait Area/Character Portrait/Name Plate/Name Label")
-dialogueLabel = NodePath("Horizontal Container/Dialogue Text")
-testPassage = ExtResource("6_5wnrh")
-
-[node name="Horizontal Container" type="HBoxContainer" parent="DialogueBox" unique_id=2062805221]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = 574.0
-offset_bottom = 134.0
-
-[node name="Character Portrait Area" type="TextureRect" parent="DialogueBox/Horizontal Container" unique_id=1456786874]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-texture = ExtResource("5_ltg2s")
-stretch_mode = 3
-
-[node name="Character Portrait" type="TextureRect" parent="DialogueBox/Horizontal Container/Character Portrait Area" unique_id=809106125]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 128.0
-stretch_mode = 3
-
-[node name="Name Plate" type="TextureRect" parent="DialogueBox/Horizontal Container/Character Portrait Area/Character Portrait" unique_id=1964562798]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -20.0
-offset_right = 64.0
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset_ratio = Vector2(0.5, 1)
-texture = ExtResource("6_ltg2s")
-stretch_mode = 3
-
-[node name="Name Label" type="Label" parent="DialogueBox/Horizontal Container/Character Portrait Area/Character Portrait/Name Plate" unique_id=1029068136]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -18.0
-offset_right = 64.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset_ratio = Vector2(0.5, 1)
-text = "Name"
-label_settings = SubResource("LabelSettings_vealc")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Padding" type="Control" parent="DialogueBox/Horizontal Container" unique_id=2092111672]
-custom_minimum_size = Vector2(4, 0)
-layout_mode = 2
-
-[node name="Dialogue Text" type="RichTextLabel" parent="DialogueBox/Horizontal Container" unique_id=394751003]
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("3_xlnb1")
-text = "Dialogue Text"
-
 [node name="Tooltip" type="Control" parent="." unique_id=480090020 node_paths=PackedStringArray("tooltipLabel")]
 visible = false
 anchors_preset = 0
@@ -366,6 +293,86 @@ text = "test"
 label_settings = SubResource("LabelSettings_dvsk4")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1003356645]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -168.0
+offset_right = 320.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_cjtla")
+
+[node name="Dialogue Box" type="TextureRect" parent="." unique_id=28753787 node_paths=PackedStringArray("characterPortrait", "characterNameLabel", "dialogueLabel")]
+z_index = 1
+layout_mode = 0
+offset_left = -1.0
+offset_top = 199.0
+offset_right = 639.0
+offset_bottom = 353.0
+texture = ExtResource("14_vmear")
+stretch_mode = 3
+script = ExtResource("5_d6n2q")
+characterPortrait = NodePath("Character Portrait")
+characterNameLabel = NodePath("Name Label")
+dialogueLabel = NodePath("Dialogue Text")
+testPassage = ExtResource("6_5wnrh")
+
+[node name="Name Label" type="Label" parent="Dialogue Box" unique_id=1029068136]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -122.0
+offset_right = -158.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(1, 1)
+text = "Name"
+label_settings = SubResource("LabelSettings_vealc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character Portrait" type="TextureRect" parent="Dialogue Box" unique_id=1853895420]
+z_index = -1
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 64.0
+offset_top = -80.0
+offset_right = 192.0
+offset_bottom = 48.0
+stretch_mode = 3
+
+[node name="Dialogue Text" type="RichTextLabel" parent="Dialogue Box" unique_id=685983375]
+clip_contents = false
+layout_mode = 0
+offset_left = 79.0
+offset_top = 56.0
+offset_right = 561.0
+offset_bottom = 120.0
+size_flags_horizontal = 3
+theme = ExtResource("3_xlnb1")
+theme_override_fonts/normal_font = ExtResource("15_vmear")
+theme_override_fonts/bold_font = ExtResource("15_vmear")
+theme_override_fonts/bold_italics_font = ExtResource("15_vmear")
+theme_override_fonts/italics_font = ExtResource("15_vmear")
+theme_override_fonts/mono_font = ExtResource("15_vmear")
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/bold_italics_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+theme_override_font_sizes/mono_font_size = 13
+text = "Dialogue Text Dialogue Text Dialogue Text"
+scroll_active = false
 
 [connection signal="item_selected" from="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/Window Mode" to="Pause Menu/Settings Screen" method="WindowModeChanged"]
 [connection signal="value_changed" from="Pause Menu/Settings Screen/Setting Controls/Box 1/Box 2/Column 2/Master Slider" to="Pause Menu/Settings Screen" method="MasterVolumeChanged"]
